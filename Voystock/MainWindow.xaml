@@ -22,8 +22,9 @@
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="45*"/>
-            <ColumnDefinition Width="467*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="148*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -32,11 +33,11 @@
             <RowDefinition Height="90*"/>
             <RowDefinition Height="439*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="button" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="#FF707070" BorderThickness="0">
+        <Button x:Name="button" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="#FF707070" BorderThickness="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Image x:Name="image" Height="60" Width="90" Source="LOGO.png" Stretch="None"/>
         </Button>
-        <Rectangle Fill="#A0000000" Grid.RowSpan="4" Grid.Row="1"/>
-        <TabControl x:Name="tabControl" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="4" TabStripPlacement="Left" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}">
+        <Rectangle Fill="#A0000000" Grid.RowSpan="4" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+        <TabControl x:Name="tabControl" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" TabStripPlacement="Left" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <TabItem x:Name="评测" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle1}">
                 <TabItem.Resources>
                     <ImageBrush x:Key="TabItem.Static.Background" ImageSource="评测_normal.png" Stretch="None" />
@@ -200,7 +201,25 @@
                         </Setter>
                     </Style>
                 </TabItem.Resources>
-                <Grid/>
+                <Grid>
+                    <TabControl x:Name="评测子页面" Margin="24,30,0,0">
+                        <TabItem x:Name="指标设置" Header="TabItem" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource 指标设置样式}">
+                            <TabItem.Background>
+                                <ImageBrush/>
+                            </TabItem.Background>
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem x:Name="日期设置" Header="TabItem" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem x:Name="标的设置" Header="TabItem" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem x:Name="结果" Header="TabItem" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
             <TabItem x:Name="学习" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle2}" >
                 <TabItem.Resources>
