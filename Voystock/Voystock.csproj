@@ -135,6 +135,21 @@
   <ItemGroup>
     <Resource Include="指标BG_normal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="指标BG_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="指标BG_hover.png" />
+    <Resource Include="时段BG_hover.png" />
+    <Resource Include="时段BG_normal.png" />
+    <Resource Include="时段BG_pressed.png" />
+    <Resource Include="标的BG_hover.png" />
+    <Resource Include="标的BG_normal.png" />
+    <Resource Include="标的BG_pressed.png" />
+    <Resource Include="结果BG_hover.png" />
+    <Resource Include="结果BG_normal.png" />
+    <Resource Include="结果BG_pressed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
