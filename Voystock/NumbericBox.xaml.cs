@@ -16,18 +16,21 @@ using System.Windows.Shapes;
 namespace Voystock
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// Interaction logic for NumbericBox.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NumbericBox : UserControl
     {
-        public MainWindow()
+        public NumbericBox()
         {
             InitializeComponent();
         }
 
-        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            DragMove();
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

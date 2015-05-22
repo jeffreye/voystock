@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Voystock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="{x:Null}" MouseMove="Window_MouseMove">
+        Title="VoyStock" Height="768" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="{x:Null}" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
