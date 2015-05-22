@@ -39,14 +39,14 @@
         <TabControl x:Name="tabControl" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="4" TabStripPlacement="Left" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}">
             <TabItem x:Name="评测" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle1}">
                 <TabItem.Resources>
-                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="评测.png" Stretch="None" />
+                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="评测_normal.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ACACAC" Opacity="0"/>
-                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="评测hover.png" Stretch="None" />
+                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="评测_hover.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#7EB4EA" Opacity="0"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
                     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#00534E4E"/>
-                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="评测_press.png" Stretch="None" />
+                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="评测_pressed.png" Stretch="None" />
                     <Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}">
                         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                         <Setter Property="Foreground" Value="Black"/>
@@ -204,14 +204,14 @@
             </TabItem>
             <TabItem x:Name="学习" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle2}" >
                 <TabItem.Resources>
-                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="学习.png" Stretch="None" />
+                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="学习_normal.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ACACAC" Opacity="0"/>
                     <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="学习_hover.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#7EB4EA" Opacity="0"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
                     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#FF534E4E"/>
-                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="学习_press.png" Stretch="None" />
+                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="学习_pressed.png" Stretch="None" />
                     <Style x:Key="TabItemStyle2" TargetType="{x:Type TabItem}">
                         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                         <Setter Property="Foreground" Value="Black"/>
@@ -367,16 +367,16 @@
                 </TabItem.Resources>
                 <Grid HorizontalAlignment="Right" Margin="0,206,-1037,-206" Width="928"/>
             </TabItem>
-            <TabItem x:Name="荐股"  Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle3}">
+            <TabItem x:Name="荐股"  Margin="-4.25,-3.75,0,0" HorizontalAlignment="Left" Width="92" Height="93.75" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle3}">
                 <TabItem.Resources>
-                    <ImageBrush x:Key="TabItem.Static.Background" Stretch="None" ImageSource="荐股.png" />
+                    <ImageBrush x:Key="TabItem.Static.Background" Stretch="None" ImageSource="荐股_normal.png" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#00ACACAC"/>
                     <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="荐股_hover.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#007EB4EA"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
                     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#00ACACAC"/>
-                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="荐股_press.png" Stretch="None" />
+                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="荐股_pressed.png" Stretch="None" />
                     <Style x:Key="TabItemStyle3" TargetType="{x:Type TabItem}">
                         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                         <Setter Property="Foreground" Value="Black"/>

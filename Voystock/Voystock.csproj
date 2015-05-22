@@ -96,37 +96,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="主BG.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="LOGO.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="评测.png" />
+    <Resource Include="评测_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="学习.png" />
+    <Resource Include="评测_pressed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="荐股.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="评测hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="评测_press.png" />
+    <Resource Include="评测_normal.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="学习_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="学习_press.png" />
+    <Resource Include="学习_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="学习_normal.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="荐股_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="荐股_press.png" />
+    <Resource Include="荐股_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="荐股_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="主BG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
