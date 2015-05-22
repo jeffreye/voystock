@@ -1,16 +1,6 @@
 <?xml version="1.0"?>
 <ProjectGuidesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectItemGuides>
-    <ProjectItemGuide TargetFile="评测子页面Control.xaml">
-      <GuideModels>
-        <GuideModel>
-          <Guides>
-            <Guide Alignment="Left" Position="20" />
-            <Guide Alignment="Top" Position="80" />
-          </Guides>
-        </GuideModel>
-      </GuideModels>
-    </ProjectItemGuide>
     <ProjectItemGuide TargetFile="MainWindow.xaml">
       <GuideModels>
         <GuideModel>
@@ -24,6 +14,19 @@
             <Guide Alignment="Left" Position="330" />
             <Guide Alignment="Left" Position="540" />
             <Guide Alignment="Left" Position="750" />
+          </Guides>
+        </GuideModel>
+      </GuideModels>
+    </ProjectItemGuide>
+    <ProjectItemGuide TargetFile="评测子页面Control.xaml">
+      <GuideModels>
+        <GuideModel>
+          <Guides>
+            <Guide Alignment="Left" Position="20" />
+            <Guide Alignment="Top" Position="80" />
+            <Guide Alignment="Top" Position="230" />
+            <Guide Alignment="Top" Position="220" />
+            <Guide Alignment="Left" Position="40" />
           </Guides>
         </GuideModel>
       </GuideModels>
