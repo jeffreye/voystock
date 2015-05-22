@@ -122,6 +122,12 @@
   <ItemGroup>
     <Resource Include="学习_press.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="荐股_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="荐股_press.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
