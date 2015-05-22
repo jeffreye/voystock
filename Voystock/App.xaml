@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:Voystock"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
-        <ResourceDictionary/>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="AppDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
