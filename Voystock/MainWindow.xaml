@@ -202,23 +202,7 @@
                     </Style>
                 </TabItem.Resources>
                 <Grid>
-                    <TabControl x:Name="评测子页面" Margin="24,30,0,0">
-                        <TabItem x:Name="指标设置" Header="TabItem" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource 指标设置样式}">
-                            <TabItem.Background>
-                                <ImageBrush/>
-                            </TabItem.Background>
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                        <TabItem x:Name="日期设置" Header="TabItem" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                        <TabItem x:Name="标的设置" Header="TabItem" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                        <TabItem x:Name="结果" Header="TabItem" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                    </TabControl>
+                    <local:评测子页面Control Margin="24,30,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="学习" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle2}" >
