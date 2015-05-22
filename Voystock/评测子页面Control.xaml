@@ -9,7 +9,7 @@
              d:DesignHeight="674" d:DesignWidth="902">
     <Grid>
         <TabControl x:Name="评测子页面" HorizontalAlignment="Right" Height="674" VerticalAlignment="Bottom" Width="902">
-            <TabItem x:Name="指标设置" Header="指标" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20">
+            <TabItem x:Name="指标设置" Header="指标" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -217,7 +217,7 @@
                     <ImageBrush ImageSource="指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
-                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="17,15,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}">
+                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="17,15,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}">
                         <ComboBox.Resources>
                             <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="dropdow_nrml.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
@@ -233,7 +233,7 @@
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Button.Background" Color="#00000000"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Button.Border" Color="#007EB4EA"/>
                             <SolidColorBrush x:Key="ComboBox.Pressed.Glyph" Color="#FF000000"/>
-                            <ImageBrush x:Key="ComboBox.Pressed.Background" ImageSource="dropdow_nrml.png" />
+                            <ImageBrush x:Key="ComboBox.Pressed.Background" ImageSource="dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBox.Pressed.Border" Color="#00569DE5"/>
                             <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Background" Color="#FFFFFFFF"/>
                             <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Border" Color="#00569DE5"/>
@@ -351,27 +351,22 @@
                                         <ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Width="0"/>
                                     </Grid.ColumnDefinitions>
                                     <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom">
-                                        <Themes:SystemDropShadowChrome x:Name="shadow" Color="Transparent" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=templateRoot}">
-                                            <Border x:Name="dropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
-                                                <ScrollViewer x:Name="DropDownScrollViewer">
-                                                    <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
-                                                        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
-                                                            <Rectangle x:Name="opaqueRect" Fill="{Binding Background, ElementName=dropDownBorder}" Height="{Binding ActualHeight, ElementName=dropDownBorder}" Width="{Binding ActualWidth, ElementName=dropDownBorder}"/>
-                                                        </Canvas>
-                                                        <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                                                    </Grid>
-                                                </ScrollViewer>
-                                            </Border>
-                                        </Themes:SystemDropShadowChrome>
+                                        <Border x:Name="dropDownBorder" BorderBrush="{x:Null}" BorderThickness="0" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                            <ScrollViewer x:Name="DropDownScrollViewer">
+                                                <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
+                                                    <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                                        <Rectangle x:Name="opaqueRect" Fill="{Binding Background, ElementName=dropDownBorder}" Height="{Binding ActualHeight, ElementName=dropDownBorder}" Width="{Binding ActualWidth, ElementName=dropDownBorder}"/>
+                                                    </Canvas>
+                                                    <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                </Grid>
+                                            </ScrollViewer>
+                                        </Border>
                                     </Popup>
                                     <ToggleButton x:Name="toggleButton" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}"/>
                                     <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
-                                        <Setter Property="Margin" TargetName="shadow" Value="0,0,5,5"/>
-                                        <Setter Property="Color" TargetName="shadow" Value="#71000000"/>
-                                    </Trigger>
+                                    <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true"/>
                                     <Trigger Property="HasItems" Value="false">
                                         <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
                                     </Trigger>
@@ -478,17 +473,17 @@
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Background" Color="#1F26A0DA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Border" Color="#A826A0DA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" Color="#3D26A0DA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Border" Color="#FF26A0DA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" Color="#2E0080FF"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Border" Color="#99006CD9"/>
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewHover.Background" ImageSource="dropdown-hvr.png" />
+                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Border" Color="#0026A0DA"/>
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" ImageSource="dropdown-hvr.png" />
+                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Border" Color="#0026A0DA"/>
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" ImageSource="dropdown-hvr.png" />
+                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Border" Color="#00006CD9"/>
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Background" Color="#3DDADADA"/>
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Border" Color="#FFDADADA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewFocus.Border" Color="#FF26A0DA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" Color="#5426A0DA"/>
-                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#FF26A0DA"/>
+                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewFocus.Border" Color="#0026A0DA"/>
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" ImageSource="dropdown-hvr.png" />
+                            <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#0026A0DA"/>
                             <Style x:Key="ComboBoxItemStyle1" TargetType="{x:Type ComboBoxItem}">
                                 <Setter Property="SnapsToDevicePixels" Value="True"/>
                                 <Setter Property="Padding" Value="4,1"/>
@@ -565,20 +560,22 @@
                                     </Setter.Value>
                                 </Setter>
                             </Style>
+                            <DataTemplate x:Key="DataTemplate1">
+                                <Grid>
+                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0"/>
+                                    <TextBlock x:Name="textBlock" Margin="0,0,-0.001,0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}"/>
+                                </Grid>
+                            </DataTemplate>
                         </ComboBox.Resources>
                         <System:String>asdf</System:String>
-                        <Button Content="abd" Width="402">
-                            <Button.Background>
-                                <ImageBrush/>
-                            </Button.Background>
-                        </Button>
                         <System:String>sdg/hjh</System:String>
                         <System:String>cbf</System:String>
                         <System:String>dgdg</System:String>
                     </ComboBox>
+                    <Label x:Name="label" Content="c" HorizontalAlignment="Left" Height="33.5" Margin="37,131.5,0,0" VerticalAlignment="Top" Width="79.25"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="日期设置" Header="日期" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20">
+            <TabItem x:Name="日期设置" Header="日期" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -787,7 +784,7 @@
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem x:Name="标的设置" Header="标的" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20">
+            <TabItem x:Name="标的设置" Header="标的" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -996,7 +993,7 @@
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20">
+            <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
