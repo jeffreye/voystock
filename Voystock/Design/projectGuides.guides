@@ -25,17 +25,16 @@
             <Guide Alignment="Left" Position="20" />
             <Guide Alignment="Top" Position="90" />
             <Guide Alignment="Left" Position="40" />
-            <Guide Alignment="Top" Position="310" />
-            <Guide Alignment="Left" Position="480" />
             <Guide Alignment="Top" Position="110" />
             <Guide Alignment="Top" Position="576" />
-            <Guide Alignment="Top" Position="510" />
-            <Guide Alignment="Left" Position="295" />
+            <Guide Alignment="Left" Position="336" />
             <Guide Alignment="Left" Position="872" />
-            <Guide Alignment="Left" Position="852" />
-            <Guide Alignment="Top" Position="210" />
-            <Guide Alignment="Top" Position="410" />
-            <Guide Alignment="Left" Position="411" />
+            <Guide Alignment="Left" Position="832" />
+            <Guide Alignment="Top" Position="65" />
+            <Guide Alignment="Left" Position="632" />
+            <Guide Alignment="Top" Position="195" />
+            <Guide Alignment="Left" Position="240" />
+            <Guide Alignment="Left" Position="536" />
           </Guides>
         </GuideModel>
       </GuideModels>

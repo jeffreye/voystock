@@ -1020,7 +1020,13 @@
                 <TabItem.Background>
                     <ImageBrush ImageSource="标的BG_normal.png"/>
                 </TabItem.Background>
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Path x:Name="分割线1" Data="M37,100 L829,100" Height="1" Margin="37,100,66,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
+                    <Path x:Name="分割线2" Data="M37,100 L829,100" Height="1" Margin="37,0,66,206" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Bottom"/>
+                    <CheckBox x:Name="全部股票" Content="全部股票" HorizontalAlignment="Left" Height="25" Margin="37,45,0,0" VerticalAlignment="Top" Width="102.666" FontSize="16"/>
+                    <CheckBox x:Name="自定义添加" Content="自定义添加" HorizontalAlignment="Left" Height="25" Margin="293,45,0,0" VerticalAlignment="Top" Width="120.666" FontSize="16"/>
+                    <local:NumbericBox HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,45,232,0" Width="115"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
