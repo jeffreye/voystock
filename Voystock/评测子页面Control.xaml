@@ -8,7 +8,74 @@
              mc:Ignorable="d" 
              d:DesignHeight="674" d:DesignWidth="902">
     <Grid>
-        <TabControl x:Name="评测子页面" HorizontalAlignment="Right" Height="574" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,100">
+        <TabControl x:Name="评测子页面" HorizontalAlignment="Right" Height="580" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,94" Style="{DynamicResource TabControlStyle1}">
+            <TabControl.Resources>
+                <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#FFFFFF"/>
+                <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#ACACAC"/>
+                <Style x:Key="TabControlStyle1" TargetType="{x:Type TabControl}">
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="{StaticResource TabItem.Selected.Background}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource TabItem.Selected.Border}"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TabControl}">
+                                <Grid x:Name="templateRoot" ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition x:Name="ColumnDefinition0"/>
+                                        <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition x:Name="RowDefinition0" Height="Auto" MinHeight="90"/>
+                                        <RowDefinition x:Name="RowDefinition1"/>
+                                    </Grid.RowDefinitions>
+                                    <TabPanel x:Name="headerPanel" Background="Transparent" Grid.Column="0" IsItemsHost="true" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                                    <Border x:Name="contentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                        <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="TabStripPlacement" Value="Bottom">
+                                        <Setter Property="Grid.Row" TargetName="headerPanel" Value="1"/>
+                                        <Setter Property="Grid.Row" TargetName="contentPanel" Value="0"/>
+                                        <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                        <Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+                                        <Setter Property="Margin" TargetName="headerPanel" Value="2,0,2,2"/>
+                                    </Trigger>
+                                    <Trigger Property="TabStripPlacement" Value="Left">
+                                        <Setter Property="Grid.Row" TargetName="headerPanel" Value="0"/>
+                                        <Setter Property="Grid.Row" TargetName="contentPanel" Value="0"/>
+                                        <Setter Property="Grid.Column" TargetName="headerPanel" Value="0"/>
+                                        <Setter Property="Grid.Column" TargetName="contentPanel" Value="1"/>
+                                        <Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+                                        <Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+                                        <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                        <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                        <Setter Property="Margin" TargetName="headerPanel" Value="2,2,0,2"/>
+                                    </Trigger>
+                                    <Trigger Property="TabStripPlacement" Value="Right">
+                                        <Setter Property="Grid.Row" TargetName="headerPanel" Value="0"/>
+                                        <Setter Property="Grid.Row" TargetName="contentPanel" Value="0"/>
+                                        <Setter Property="Grid.Column" TargetName="headerPanel" Value="1"/>
+                                        <Setter Property="Grid.Column" TargetName="contentPanel" Value="0"/>
+                                        <Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+                                        <Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+                                        <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                        <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                        <Setter Property="Margin" TargetName="headerPanel" Value="0,2,2,2"/>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
             <TabItem x:Name="指标设置" Header="指标" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
@@ -813,17 +880,17 @@
                     <local:NumbericBox x:Name="输入框2" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="Height" Margin="292,145,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" BorderThickness="0,0,0,1"/>
                     <TextBlock x:Name="投入剩余资金的上涨条件" HorizontalAlignment="Left" Height="20" Margin="37,245,0,0" TextWrapping="Wrap" Text="投入剩余资金的上涨条件" VerticalAlignment="Top" Width="178" FontSize="16"/>
                     <local:NumbericBox x:Name="输入框3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,245,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height"/>
-                    <CheckBox x:Name="止盈率" Content="止盈率" HorizontalAlignment="Left" Height="19" Margin="37,0,0,242" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
-                    <local:NumbericBox x:Name="输入框4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,236" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height"/>
-                    <CheckBox x:Name="固定交易周期" Content="固定交易周期" HorizontalAlignment="Left" Height="19" Margin="37,0,0,142" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
-                    <local:NumbericBox x:Name="输入框5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,136" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height"/>
+                    <CheckBox x:Name="止盈率" Content="止盈率" HorizontalAlignment="Left" Height="19" Margin="37,0,0,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
+                    <local:NumbericBox x:Name="输入框4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height"/>
+                    <CheckBox x:Name="固定交易周期" Content="固定交易周期" HorizontalAlignment="Left" Height="19" Margin="37,0,0,57" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
+                    <local:NumbericBox x:Name="输入框5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,51" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height"/>
                     <TextBlock x:Name="评测结束时间" HorizontalAlignment="Right" Height="20" Margin="0,45,323,0" TextWrapping="Wrap" Text="评测结束时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
                     <TextBlock x:Name="首次卖出股票比例" HorizontalAlignment="Right" Height="20" Margin="0,145,289,0" TextWrapping="Wrap" Text="首次卖出股票比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
                     <local:NumbericBox x:Name="输入框7" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,145,47,0" Width="116" FontSize="16" BorderBrush="#1E000000"/>
                     <TextBlock x:Name="卖出剩余股票的下跌条件" HorizontalAlignment="Right" Height="20" Margin="0,245,241,0" TextWrapping="Wrap" Text="卖出剩余股票的下跌条件" VerticalAlignment="Top" Width="178" FontSize="16"/>
                     <local:NumbericBox x:Name="输入框8" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,245,47,0" Width="116" FontSize="16" d:LayoutOverrides="Height"/>
-                    <CheckBox x:Name="止损率" Content="止损率" HorizontalAlignment="Right" Height="19" Margin="0,0,300,242" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
-                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,47,236" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height" Foreground="#DD000000"/>
+                    <CheckBox x:Name="止损率" Content="止损率" HorizontalAlignment="Right" Height="19" Margin="0,0,300,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
+                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,47,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" Foreground="#DD000000"/>
                     <DatePicker HorizontalAlignment="Left" Margin="200.43,40.686,0,0" VerticalAlignment="Top" Width="207.57" Style="{DynamicResource DatePickerStyle1}" CalendarStyle="{DynamicResource CalendarStyle1}">
                         <DatePicker.Resources>
                             <Style x:Key="DatePickerStyle1" TargetType="{x:Type DatePicker}">
