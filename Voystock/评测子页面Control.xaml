@@ -284,7 +284,7 @@
                     <ImageBrush ImageSource="指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
-                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="17,45,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}">
+                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="17,17,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}">
                         <ComboBox.Resources>
                             <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="dropdow_nrml.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
@@ -639,20 +639,20 @@
                         <System:String>cbf</System:String>
                         <System:String>dgdg</System:String>
                     </ComboBox>
-                    <local:NumbericBox x:Name="参数设置1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,143.797,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
-                    <local:NumbericBox x:Name="参数设置2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,143.797,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
-                    <local:NumbericBox x:Name="参数设置3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,143.797,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
-                    <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="17,205,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="403"/>
-                    <TextBlock x:Name="买入点" HorizontalAlignment="Left" Height="20" Margin="37,245,0,0" TextWrapping="Wrap" Text="买入点" VerticalAlignment="Top" Width="40" FontSize="13" Foreground="#DD000000"/>
-                    <TextBlock x:Name="卖出点" HorizontalAlignment="Left" Margin="37,303.336,0,0" TextWrapping="Wrap" Text="卖出点" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="其他" HorizontalAlignment="Left" Margin="37,361.672,0,0" TextWrapping="Wrap" Text="其他" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Top"/>
-                    <Label x:Name="买入点内容" Content="绑定数据元素" HorizontalAlignment="Left" Height="24" Margin="197,245,0,0" VerticalAlignment="Top" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5"/>
-                    <Label x:Name="卖出点内容" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,303.336,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
-                    <Label x:Name="其他内容1" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,361.672,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
-                    <Label x:Name="其他内容2" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,413.667,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="方案提示" HorizontalAlignment="Right" Height="44" Margin="0,45,158.334,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.666" FontSize="13" Padding="0,5,0,0"><Run Text="方案中有多个指标时，有效的方案买入信号为"/><LineBreak/><Run Text="三日内各指标均发出买入信号 "/></TextBlock>
-                    <Path x:Name="方案提示下分割线" Data="M479.66667,107.66667 L849.02166,107.66667" Fill="#1E000000" HorizontalAlignment="Right" Height="1" Margin="0,105,47,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="372"/>
-                    <ListView x:Name="listView" HorizontalAlignment="Right" Margin="0,143.797,85,131.203" Width="321">
+                    <local:NumbericBox x:Name="参数设置1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <local:NumbericBox x:Name="参数设置2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <local:NumbericBox x:Name="参数设置3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="17,177,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="403"/>
+                    <TextBlock x:Name="买入点" HorizontalAlignment="Left" Height="20" Margin="37,218.5,0,0" TextWrapping="Wrap" Text="买入点" VerticalAlignment="Top" Width="40" FontSize="13" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
+                    <TextBlock x:Name="卖出点" HorizontalAlignment="Left" Margin="37,276.836,0,0" TextWrapping="Wrap" Text="卖出点" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="其他" HorizontalAlignment="Left" Margin="37,335.172,0,0" TextWrapping="Wrap" Text="其他" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Top"/>
+                    <Label x:Name="买入点内容" Content="绑定数据元素" HorizontalAlignment="Left" Height="24" Margin="197,218.5,0,0" VerticalAlignment="Top" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5"/>
+                    <Label x:Name="卖出点内容" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,276.836,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
+                    <Label x:Name="其他内容1" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,335.172,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
+                    <Label x:Name="其他内容2" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,394.667,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="方案提示" HorizontalAlignment="Left" Height="44" Margin="477,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.666" FontSize="13" Padding="0,5,0,0"><Run Text="方案中有多个指标时，有效的方案买入信号为"/><LineBreak/><Run Text="三日内各指标均发出买入信号 "/></TextBlock>
+                    <Path x:Name="方案提示下分割线" Data="M479.66667,107.66667 L849.02166,107.66667" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="477,78,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="372"/>
+                    <ListView x:Name="listView" HorizontalAlignment="Left" Margin="477,109.172,0,155.828" Width="372">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
@@ -875,23 +875,23 @@
                     <ImageBrush ImageSource="时段BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5">
-                    <TextBlock x:Name="评测起始时间" HorizontalAlignment="Left" Height="20" Margin="37,45,0,0" TextWrapping="Wrap" Text="评测起始时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
-                    <TextBlock x:Name="首次投入资金比例" HorizontalAlignment="Left" Height="20" Margin="37,145,0,0" TextWrapping="Wrap" Text="首次投入资金比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
-                    <local:NumbericBox x:Name="输入框2" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="Height" Margin="292,145,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" BorderThickness="0,0,0,1"/>
-                    <TextBlock x:Name="投入剩余资金的上涨条件" HorizontalAlignment="Left" Height="20" Margin="37,245,0,0" TextWrapping="Wrap" Text="投入剩余资金的上涨条件" VerticalAlignment="Top" Width="178" FontSize="16"/>
-                    <local:NumbericBox x:Name="输入框3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,245,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height"/>
+                    <TextBlock x:Name="评测起始时间" HorizontalAlignment="Left" Height="20" Margin="37,17,0,0" TextWrapping="Wrap" Text="评测起始时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
+                    <TextBlock x:Name="首次投入资金比例" HorizontalAlignment="Left" Height="20" Margin="37,117,0,0" TextWrapping="Wrap" Text="首次投入资金比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
+                    <local:NumbericBox x:Name="输入框2" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="Height" Margin="292,117,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" BorderThickness="0,0,0,1"/>
+                    <TextBlock x:Name="投入剩余资金的上涨条件" HorizontalAlignment="Left" Height="20" Margin="37,217,0,0" TextWrapping="Wrap" Text="投入剩余资金的上涨条件" VerticalAlignment="Top" Width="178" FontSize="16" d:LayoutOverrides="VerticalAlignment"/>
+                    <local:NumbericBox x:Name="输入框3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,217,0,0" Width="116" FontSize="16" d:LayoutOverrides="VerticalAlignment, Height"/>
                     <CheckBox x:Name="止盈率" Content="止盈率" HorizontalAlignment="Left" Height="19" Margin="37,0,0,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
                     <local:NumbericBox x:Name="输入框4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height"/>
                     <CheckBox x:Name="固定交易周期" Content="固定交易周期" HorizontalAlignment="Left" Height="19" Margin="37,0,0,57" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
                     <local:NumbericBox x:Name="输入框5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,51" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height"/>
-                    <TextBlock x:Name="评测结束时间" HorizontalAlignment="Right" Height="20" Margin="0,45,323,0" TextWrapping="Wrap" Text="评测结束时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
-                    <TextBlock x:Name="首次卖出股票比例" HorizontalAlignment="Right" Height="20" Margin="0,145,289,0" TextWrapping="Wrap" Text="首次卖出股票比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
-                    <local:NumbericBox x:Name="输入框7" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,145,47,0" Width="116" FontSize="16" BorderBrush="#1E000000"/>
-                    <TextBlock x:Name="卖出剩余股票的下跌条件" HorizontalAlignment="Right" Height="20" Margin="0,245,241,0" TextWrapping="Wrap" Text="卖出剩余股票的下跌条件" VerticalAlignment="Top" Width="178" FontSize="16"/>
-                    <local:NumbericBox x:Name="输入框8" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,245,47,0" Width="116" FontSize="16" d:LayoutOverrides="Height"/>
-                    <CheckBox x:Name="止损率" Content="止损率" HorizontalAlignment="Right" Height="19" Margin="0,0,300,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
-                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,47,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" Foreground="#DD000000"/>
-                    <DatePicker HorizontalAlignment="Left" Margin="200.43,40.686,0,0" VerticalAlignment="Top" Width="207.57" Style="{DynamicResource DatePickerStyle1}" CalendarStyle="{DynamicResource CalendarStyle1}">
+                    <TextBlock x:Name="评测结束时间" HorizontalAlignment="Left" Height="20" Margin="477,17,0,0" TextWrapping="Wrap" Text="评测结束时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
+                    <TextBlock x:Name="首次卖出股票比例" HorizontalAlignment="Left" Height="20" Margin="477,117,0,0" TextWrapping="Wrap" Text="首次卖出股票比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
+                    <local:NumbericBox x:Name="输入框7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,117,0,0" Width="116" FontSize="16" BorderBrush="#1E000000"/>
+                    <TextBlock x:Name="卖出剩余股票的下跌条件" HorizontalAlignment="Left" Height="20" Margin="477,217,0,0" TextWrapping="Wrap" Text="卖出剩余股票的下跌条件" VerticalAlignment="Top" Width="178" FontSize="16" d:LayoutOverrides="VerticalAlignment"/>
+                    <local:NumbericBox x:Name="输入框8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,217,0,0" Width="116" FontSize="16" d:LayoutOverrides="VerticalAlignment, Height"/>
+                    <CheckBox x:Name="止损率" Content="止损率" HorizontalAlignment="Left" Height="19" Margin="477,0,0,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
+                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="733,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" Foreground="#DD000000"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="292,17,0,0" VerticalAlignment="Top" Width="116" Style="{DynamicResource DatePickerStyle1}" CalendarStyle="{DynamicResource CalendarStyle1}" FontSize="16">
                         <DatePicker.Resources>
                             <Style x:Key="DatePickerStyle1" TargetType="{x:Type DatePicker}">
                                 <Setter Property="Foreground" Value="#FF333333"/>
@@ -1084,7 +1084,199 @@
                             </Style>
                         </DatePicker.Resources>
                     </DatePicker>
-                    <DatePickerTextBox x:Name="datePickerTextBox" HorizontalAlignment="Left" Margin="215,89,0,0" TextWrapping="Wrap" Text="DatePickerTextBox" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="733,17,0,0" VerticalAlignment="Top" Width="116" Style="{DynamicResource DatePickerStyle1}" CalendarStyle="{DynamicResource CalendarStyle1}" FontSize="16">
+                        <DatePicker.Resources>
+                            <Style x:Key="DatePickerStyle1" TargetType="{x:Type DatePicker}">
+                                <Setter Property="Foreground" Value="#FF333333"/>
+                                <Setter Property="IsTodayHighlighted" Value="True"/>
+                                <Setter Property="SelectedDateFormat" Value="Short"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Padding" Value="2"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
+                                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                                            <GradientStop Color="#FF617584" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DatePicker}">
+                                            <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="Disabled">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_DisabledVisual"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                    <Grid.Resources>
+                                                        <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF"/>
+                                                        <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type Button}">
+                                                            <Grid>
+                                                                <VisualStateManager.VisualStateGroups>
+                                                                    <VisualStateGroup x:Name="CommonStates">
+                                                                        <VisualStateGroup.Transitions>
+                                                                            <VisualTransition GeneratedDuration="0"/>
+                                                                            <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                                            <VisualTransition GeneratedDuration="0:0:0.1" To="Pressed"/>
+                                                                        </VisualStateGroup.Transitions>
+                                                                        <VisualState x:Name="Normal"/>
+                                                                        <VisualState x:Name="MouseOver">
+                                                                            <Storyboard>
+                                                                                <ColorAnimation Duration="0" To="#FF448DCA" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background"/>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#7FFFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#CCFFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#F2FFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Pressed">
+                                                                            <Storyboard>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#FF448DCA"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                                <DoubleAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Highlight">
+                                                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                                                </DoubleAnimationUsingKeyFrames>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#EAFFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#C6FFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#6BFFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                                <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                                    <SplineColorKeyFrame KeyTime="0" Value="#F4FFFFFF"/>
+                                                                                </ColorAnimationUsingKeyFrames>
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Disabled"/>
+                                                                    </VisualStateGroup>
+                                                                </VisualStateManager.VisualStateGroups>
+                                                                <Grid Background="#11FFFFFF" FlowDirection="LeftToRight" HorizontalAlignment="Center" Height="18" Margin="0" VerticalAlignment="Center" Width="19">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="20*"/>
+                                                                        <ColumnDefinition Width="20*"/>
+                                                                        <ColumnDefinition Width="20*"/>
+                                                                        <ColumnDefinition Width="20*"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="23*"/>
+                                                                        <RowDefinition Height="19*"/>
+                                                                        <RowDefinition Height="19*"/>
+                                                                        <RowDefinition Height="19*"/>
+                                                                    </Grid.RowDefinitions>
+                                                                    <Border x:Name="Highlight" BorderBrush="#FF45D6FA" BorderThickness="1" Grid.ColumnSpan="4" CornerRadius="0,0,1,1" Margin="-1" Opacity="0" Grid.Row="0" Grid.RowSpan="4"/>
+                                                                    <Border x:Name="Background" BorderBrush="#FFFFFFFF" BorderThickness="1" Background="#FF1F3B53" Grid.ColumnSpan="4" CornerRadius=".5" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="3"/>
+                                                                    <Border x:Name="BackgroundGradient" BorderBrush="#BF000000" BorderThickness="1" Grid.ColumnSpan="4" CornerRadius=".5" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="3">
+                                                                        <Border.Background>
+                                                                            <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                                                <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                                                <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
+                                                                                <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
+                                                                                <GradientStop Color="#C6FFFFFF" Offset="1"/>
+                                                                            </LinearGradientBrush>
+                                                                        </Border.Background>
+                                                                    </Border>
+                                                                    <Rectangle Grid.ColumnSpan="4" Grid.RowSpan="1" StrokeThickness="1">
+                                                                        <Rectangle.Fill>
+                                                                            <LinearGradientBrush EndPoint="0.3,-1.1" StartPoint="0.46,1.6">
+                                                                                <GradientStop Color="#FF4084BD"/>
+                                                                                <GradientStop Color="#FFAFCFEA" Offset="1"/>
+                                                                            </LinearGradientBrush>
+                                                                        </Rectangle.Fill>
+                                                                        <Rectangle.Stroke>
+                                                                            <LinearGradientBrush EndPoint="0.48,-1" StartPoint="0.48,1.25">
+                                                                                <GradientStop Color="#FF494949"/>
+                                                                                <GradientStop Color="#FF9F9F9F" Offset="1"/>
+                                                                            </LinearGradientBrush>
+                                                                        </Rectangle.Stroke>
+                                                                    </Rectangle>
+                                                                    <Path Grid.ColumnSpan="4" Grid.Column="0" Data="M11.426758,8.4305077 L11.749023,8.4305077 L11.749023,16.331387 L10.674805,16.331387 L10.674805,10.299648 L9.0742188,11.298672 L9.0742188,10.294277 C9.4788408,10.090176 9.9094238,9.8090878 10.365967,9.4510155 C10.82251,9.0929432 11.176106,8.7527733 11.426758,8.4305077 z M14.65086,8.4305077 L18.566387,8.4305077 L18.566387,9.3435936 L15.671368,9.3435936 L15.671368,11.255703 C15.936341,11.058764 16.27293,10.960293 16.681133,10.960293 C17.411602,10.960293 17.969301,11.178717 18.354229,11.615566 C18.739157,12.052416 18.931622,12.673672 18.931622,13.479336 C18.931622,15.452317 18.052553,16.438808 16.294415,16.438808 C15.560365,16.438808 14.951641,16.234707 14.468243,15.826504 L14.881817,14.929531 C15.368796,15.326992 15.837872,15.525723 16.289043,15.525723 C17.298809,15.525723 17.803692,14.895514 17.803692,13.635098 C17.803692,12.460618 17.305971,11.873379 16.310528,11.873379 C15.83071,11.873379 15.399232,12.079271 15.016094,12.491055 L14.65086,12.238613 z" Fill="#FF2F2F2F" HorizontalAlignment="Center" Margin="4,3,4,3" Grid.Row="1" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Stretch="Fill" VerticalAlignment="Center"/>
+                                                                    <Ellipse Grid.ColumnSpan="4" Fill="#FFFFFFFF" HorizontalAlignment="Center" Height="3" StrokeThickness="0" VerticalAlignment="Center" Width="3"/>
+                                                                    <Border x:Name="DisabledVisual" BorderBrush="#B2FFFFFF" BorderThickness="1" Grid.ColumnSpan="4" CornerRadius="0,0,.5,.5" Opacity="0" Grid.Row="0" Grid.RowSpan="4"/>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Grid.Resources>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Center" Margin="3,0,3,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Center" Width="20"/>
+                                                    <DatePickerTextBox x:Name="PART_TextBox" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalContentAlignment="Stretch" Grid.Row="0" VerticalContentAlignment="Stretch"/>
+                                                    <Grid x:Name="PART_DisabledVisual" Grid.ColumnSpan="2" Grid.Column="0" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Rectangle Grid.Column="0" Fill="#A5FFFFFF" RadiusY="1" Grid.Row="0" RadiusX="1"/>
+                                                        <Rectangle Grid.Column="1" Fill="#A5FFFFFF" Height="18" Margin="3,0,3,0" RadiusY="1" Grid.Row="0" RadiusX="1" Width="19"/>
+                                                        <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static SystemParameters.HighContrast}}" Value="false">
+                                                    <Setter Property="Foreground" TargetName="PART_TextBox" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                </DataTrigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                            <Style x:Key="CalendarStyle1" TargetType="{x:Type Calendar}">
+                                <Setter Property="Foreground" Value="#FF333333"/>
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE4EAF0" Offset="0"/>
+                                            <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                                            <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                                            <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                                            <GradientStop Color="#FF617584" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Calendar}">
+                                            <StackPanel x:Name="PART_Root" HorizontalAlignment="Center">
+                                                <CalendarItem x:Name="PART_CalendarItem" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Style="{TemplateBinding CalendarItemStyle}" d:IsHidden="True"/>
+                                            </StackPanel>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
                 </Grid>
             </TabItem>
             <TabItem x:Name="标的设置" Header="标的" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
@@ -1295,11 +1487,32 @@
                     <ImageBrush ImageSource="标的BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5">
-                    <Path x:Name="分割线1" Data="M37,100 L829,100" Height="1" Margin="37,100,66,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
-                    <Path x:Name="分割线2" Data="M37,100 L829,100" Height="1" Margin="37,0,66,206" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Bottom"/>
-                    <CheckBox x:Name="全部股票" Content="全部股票" HorizontalAlignment="Left" Height="25" Margin="37,45,0,0" VerticalAlignment="Top" Width="102.666" FontSize="16"/>
-                    <CheckBox x:Name="自定义添加" Content="自定义添加" HorizontalAlignment="Left" Height="25" Margin="293,45,0,0" VerticalAlignment="Top" Width="120.666" FontSize="16"/>
-                    <local:NumbericBox HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,45,232,0" Width="115"/>
+                    <Path x:Name="分割线1" Data="M37,100 L829,100" Height="1" Margin="37.167,72,65.833,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
+                    <Path x:Name="分割线2" Data="M37,100 L829,100" Height="1" Margin="37,0,66,112" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Bottom"/>
+                    <CheckBox x:Name="全部股票" Content="全部股票" HorizontalAlignment="Left" Height="25" Margin="37.167,27,0,0" VerticalAlignment="Top" Width="102.666" FontSize="16"/>
+                    <CheckBox x:Name="自定义添加" Content="自定义添加" HorizontalAlignment="Left" Height="25" Margin="293.167,27,0,0" VerticalAlignment="Top" Width="120.666" FontSize="16"/>
+                    <local:NumbericBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="529.667,27,0,0" Width="115" Height="25"/>
+                    <ListView x:Name="listView1" HorizontalAlignment="Left" Margin="37.167,103,0,143" Width="200">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView x:Name="listView1_Copy" Margin="334,103,0,143" HorizontalAlignment="Left" Width="200">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView x:Name="listView1_Copy1" Margin="630,103,0,143" HorizontalAlignment="Left" Width="200">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
             <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
@@ -1509,10 +1722,21 @@
                 <TabItem.Background>
                     <ImageBrush ImageSource="结果BG_normal.png"/>
                 </TabItem.Background>
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <ProgressBar Margin="137.5,105,0,0" Height="98.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="134"/>
+                    <TextBlock x:Name="方案名" Height="20.333" Margin="387,27,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50"/>
+                    <TextBox x:Name="方案名内容" HorizontalAlignment="Left" Height="24" Margin="627,27,0,0" TextWrapping="Wrap" Text="接受输入" VerticalAlignment="Top" Width="212" FontSize="16" Background="{x:Null}" BorderBrush="#1E000000" Foreground="#89000000" Padding="-2,-2,0,0"/>
+                    <TextBlock x:Name="方案指标及参数" Height="20.333" Margin="387,126.002,0,0" TextWrapping="Wrap" Text="方案指标及参数" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="116.667"/>
+                    <Label x:Name="label" Content="数据连接" HorizontalAlignment="Left" Height="25" Margin="627,126,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000"/>
+                    <Label x:Name="label_Copy" Content="数据连接" HorizontalAlignment="Left" Margin="627,206,0,0" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000" Height="25" VerticalAlignment="Top"/>
+                    <Label x:Name="label_Copy1" Content="数据连接" HorizontalAlignment="Left" Margin="627,0,0,173" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000" Height="25" VerticalAlignment="Bottom"/>
+                    <Label x:Name="label_Copy2" Content="数据连接" HorizontalAlignment="Left" Margin="627,0,0,93" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000" Height="25" VerticalAlignment="Bottom"/>
+                    <Button x:Name="button1" Content="Button" Height="40.5" Margin="430.5,0,0,29.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="169.5"/>
+                    <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="40.5" Margin="669,0,0,29.5" VerticalAlignment="Bottom" Width="142.5"/>
+                </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Right" Margin="0,0,10,33.76" VerticalAlignment="Bottom" Width="164" Height="40.24"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="728,0,0,33.76" VerticalAlignment="Bottom" Width="164" Height="40.24"/>
 
     </Grid>
 </UserControl>
