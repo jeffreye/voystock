@@ -794,7 +794,24 @@
                 <TabItem.Background>
                     <ImageBrush ImageSource="时段BG_normal.png"/>
                 </TabItem.Background>
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock x:Name="评测起始时间" HorizontalAlignment="Left" Height="20" Margin="37,45,0,0" TextWrapping="Wrap" Text="评测起始时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
+                    <TextBlock x:Name="首次投入资金比例" HorizontalAlignment="Left" Height="20" Margin="37,145,0,0" TextWrapping="Wrap" Text="首次投入资金比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
+                    <local:NumbericBox x:Name="输入框2" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="Height" Margin="292,145,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" BorderThickness="0,0,0,1"/>
+                    <TextBlock x:Name="投入剩余资金的上涨条件" HorizontalAlignment="Left" Height="20" Margin="37,245,0,0" TextWrapping="Wrap" Text="投入剩余资金的上涨条件" VerticalAlignment="Top" Width="178" FontSize="16"/>
+                    <local:NumbericBox x:Name="输入框3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,245,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height"/>
+                    <CheckBox x:Name="止盈率" Content="止盈率" HorizontalAlignment="Left" Height="19" Margin="37,0,0,242" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
+                    <local:NumbericBox x:Name="输入框4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,236" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height"/>
+                    <CheckBox x:Name="固定交易周期" Content="固定交易周期" HorizontalAlignment="Left" Height="19" Margin="37,0,0,142" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
+                    <local:NumbericBox x:Name="输入框5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,136" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height"/>
+                    <TextBlock x:Name="评测结束时间" HorizontalAlignment="Right" Height="20" Margin="0,45,323,0" TextWrapping="Wrap" Text="评测结束时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
+                    <TextBlock x:Name="首次卖出股票比例" HorizontalAlignment="Right" Height="20" Margin="0,145,289,0" TextWrapping="Wrap" Text="首次卖出股票比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
+                    <local:NumbericBox x:Name="输入框7" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,145,47,0" Width="116" FontSize="16" BorderBrush="#1E000000"/>
+                    <TextBlock x:Name="卖出剩余股票的下跌条件" HorizontalAlignment="Right" Height="20" Margin="0,245,241,0" TextWrapping="Wrap" Text="卖出剩余股票的下跌条件" VerticalAlignment="Top" Width="178" FontSize="16"/>
+                    <local:NumbericBox x:Name="输入框8" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,245,47,0" Width="116" FontSize="16" d:LayoutOverrides="Height"/>
+                    <CheckBox x:Name="止损率" Content="止损率" HorizontalAlignment="Right" Height="19" Margin="0,0,300,242" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000"/>
+                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,47,236" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height" Foreground="#DD000000"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="标的设置" Header="标的" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
