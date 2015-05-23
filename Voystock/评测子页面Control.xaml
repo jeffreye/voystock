@@ -217,7 +217,7 @@
                     <ImageBrush ImageSource="指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
-                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="17,15,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}">
+                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="17,45,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}">
                         <ComboBox.Resources>
                             <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="dropdow_nrml.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
@@ -572,7 +572,19 @@
                         <System:String>cbf</System:String>
                         <System:String>dgdg</System:String>
                     </ComboBox>
-                    <Label x:Name="label" Content="c" HorizontalAlignment="Left" Height="33.5" Margin="37,131.5,0,0" VerticalAlignment="Top" Width="79.25"/>
+                    <local:NumbericBox x:Name="参数设置1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,143.797,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <local:NumbericBox x:Name="参数设置2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,143.797,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <local:NumbericBox x:Name="参数设置3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,143.797,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="17,205,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="403"/>
+                    <TextBlock x:Name="买入点" HorizontalAlignment="Left" Height="20" Margin="37,245,0,0" TextWrapping="Wrap" Text="买入点" VerticalAlignment="Top" Width="40" FontSize="13" Foreground="#DD000000"/>
+                    <TextBlock x:Name="卖出点" HorizontalAlignment="Left" Margin="37,0,0,282.664" TextWrapping="Wrap" Text="卖出点" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Bottom"/>
+                    <TextBlock x:Name="其他" HorizontalAlignment="Left" Margin="37,0,0,224.328" TextWrapping="Wrap" Text="其他" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Bottom"/>
+                    <Label x:Name="买入点内容" Content="绑定数据元素" HorizontalAlignment="Left" Height="24" Margin="197,245,0,0" VerticalAlignment="Top" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5"/>
+                    <Label x:Name="卖出点内容" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,0,0,278.664" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Bottom"/>
+                    <Label x:Name="其他内容1" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,0,0,220.328" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Bottom"/>
+                    <Label x:Name="其他内容2" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,0,0,168.333" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Bottom"/>
+                    <TextBlock x:Name="方案提示" HorizontalAlignment="Right" Height="44" Margin="0,45,158.334,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.666" FontSize="13" Padding="0,5,0,0"><Run Text="方案中有多个指标时，有效的方案买入信号为"/><LineBreak/><Run Text="三日内各指标均发出买入信号 "/></TextBlock>
+                    <Path x:Name="方案提示下分割线" Data="M479.66667,107.66667 L849.02166,107.66667" Fill="#1E000000" HorizontalAlignment="Right" Height="1" Margin="0,105,47,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="372"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="日期设置" Header="日期" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">

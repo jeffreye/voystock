@@ -23,10 +23,16 @@
         <GuideModel>
           <Guides>
             <Guide Alignment="Left" Position="20" />
-            <Guide Alignment="Top" Position="80" />
-            <Guide Alignment="Top" Position="230" />
-            <Guide Alignment="Top" Position="220" />
+            <Guide Alignment="Top" Position="90" />
             <Guide Alignment="Left" Position="40" />
+            <Guide Alignment="Top" Position="270" />
+            <Guide Alignment="Left" Position="480" />
+            <Guide Alignment="Top" Position="110" />
+            <Guide Alignment="Top" Position="576" />
+            <Guide Alignment="Top" Position="506" />
+            <Guide Alignment="Left" Position="200" />
+            <Guide Alignment="Left" Position="872" />
+            <Guide Alignment="Left" Position="852" />
           </Guides>
         </GuideModel>
       </GuideModels>
