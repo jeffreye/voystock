@@ -1,17 +1,6 @@
 <?xml version="1.0"?>
 <ProjectGuidesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectItemGuides>
-    <ProjectItemGuide TargetFile="荐股子页面Control.xaml">
-      <GuideModels>
-        <GuideModel>
-          <Guides>
-            <Guide Alignment="Top" Position="120" />
-            <Guide Alignment="Left" Position="30" />
-            <Guide Alignment="Top" Position="162" />
-          </Guides>
-        </GuideModel>
-      </GuideModels>
-    </ProjectItemGuide>
     <ProjectItemGuide TargetFile="MainWindow.xaml">
       <GuideModels>
         <GuideModel>
@@ -25,20 +14,6 @@
             <Guide Alignment="Left" Position="330" />
             <Guide Alignment="Left" Position="540" />
             <Guide Alignment="Left" Position="750" />
-          </Guides>
-        </GuideModel>
-      </GuideModels>
-    </ProjectItemGuide>
-    <ProjectItemGuide TargetFile="学习子页面Control.xaml">
-      <GuideModels>
-        <GuideModel>
-          <Guides>
-            <Guide Alignment="Left" Position="842" />
-            <Guide Alignment="Top" Position="120" />
-            <Guide Alignment="Left" Position="30" />
-            <Guide Alignment="Left" Position="525" />
-            <Guide Alignment="Top" Position="177" />
-            <Guide Alignment="Top" Position="215" />
           </Guides>
         </GuideModel>
       </GuideModels>
@@ -62,6 +37,31 @@
             <Guide Alignment="Left" Position="872" />
             <Guide Alignment="Left" Position="396" />
             <Guide Alignment="Left" Position="214" />
+          </Guides>
+        </GuideModel>
+      </GuideModels>
+    </ProjectItemGuide>
+    <ProjectItemGuide TargetFile="学习子页面Control.xaml">
+      <GuideModels>
+        <GuideModel>
+          <Guides>
+            <Guide Alignment="Left" Position="842" />
+            <Guide Alignment="Top" Position="120" />
+            <Guide Alignment="Left" Position="30" />
+            <Guide Alignment="Left" Position="525" />
+            <Guide Alignment="Top" Position="177" />
+            <Guide Alignment="Top" Position="215" />
+          </Guides>
+        </GuideModel>
+      </GuideModels>
+    </ProjectItemGuide>
+    <ProjectItemGuide TargetFile="荐股子页面Control.xaml">
+      <GuideModels>
+        <GuideModel>
+          <Guides>
+            <Guide Alignment="Top" Position="120" />
+            <Guide Alignment="Left" Position="30" />
+            <Guide Alignment="Top" Position="162" />
           </Guides>
         </GuideModel>
       </GuideModels>

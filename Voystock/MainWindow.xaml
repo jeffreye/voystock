@@ -37,8 +37,10 @@
             <Image x:Name="image" Height="60" Width="90" Source="UIElements/LOGO.png" Stretch="None"/>
         </Button>
         <Rectangle Fill="#A0000000" Grid.RowSpan="4" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+        <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="-16.472,20,0,18" TextWrapping="Wrap" Text="Voy Stock" Width="81" Foreground="#DD000000" FontSize="16"/>
+        <Path Grid.Column="2" Data="M198.5,20 L198.5,42.005681" HorizontalAlignment="Left" Margin="77.028,20,0,17.994" Stretch="Fill" Width="1" Stroke="#DD000000" Fill="#DD000000"/>
         <TabControl x:Name="tabControl" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" TabStripPlacement="Left" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-            <TabItem x:Name="评测" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle1}" d:IsLocked="True">
+            <TabItem x:Name="评测" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle1}">
                 <TabItem.Resources>
                     <ImageBrush x:Key="TabItem.Static.Background" ImageSource="UIElements/评测_normal.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ACACAC" Opacity="0"/>
