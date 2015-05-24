@@ -38,7 +38,7 @@
         </Button>
         <Rectangle Fill="#A0000000" Grid.RowSpan="4" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
         <TabControl x:Name="tabControl" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" TabStripPlacement="Left" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-            <TabItem x:Name="评测" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle1}">
+            <TabItem x:Name="评测" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="90" Height="90" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle1}" d:IsLocked="True">
                 <TabItem.Resources>
                     <ImageBrush x:Key="TabItem.Static.Background" ImageSource="评测_normal.png" Stretch="None" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ACACAC" Opacity="0"/>
@@ -60,7 +60,7 @@
                         <Setter Property="Template" Value="{StaticResource TabTemplate}" />
                     </Style>
                 </TabItem.Resources>
-                <Grid>
+                <Grid Margin="2,2,-2,-2">
                     <local:评测子页面Control Margin="24,30,0,0"/>
                 </Grid>
             </TabItem>
@@ -86,7 +86,9 @@
                         <Setter Property="Template" Value="{StaticResource TabTemplate}" />
                     </Style>
                 </TabItem.Resources>
-                <Grid HorizontalAlignment="Right" Margin="0,206,-1037,-206" Width="928"/>
+                <Grid Margin="0,2,-2,-2">
+                    <local:学习子页面Control Margin="26,30,0,0" Height="674"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="荐股"  Margin="-4.25,-3.75,0,0" HorizontalAlignment="Left" Width="92" Height="93.75" VerticalAlignment="Top" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource TabItemStyle3}">
                 <TabItem.Resources>
@@ -110,7 +112,9 @@
                         <Setter Property="Template" Value="{StaticResource TabTemplate}" />
                     </Style>
                 </TabItem.Resources>
-                <Grid/>
+                <Grid>
+                    <local:荐股子页面Control Margin="25.977,31.979,-1.99,-1.992" d:LayoutOverrides="Width, Height"/>
+                </Grid>
             </TabItem>
         </TabControl>
 

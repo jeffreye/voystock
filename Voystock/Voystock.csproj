@@ -58,6 +58,12 @@
     <Compile Include="NumbericBox.xaml.cs">
       <DependentUpon>NumbericBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="荐股子页面Control.xaml.cs">
+      <DependentUpon>荐股子页面Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="学习子页面Control.xaml.cs">
+      <DependentUpon>学习子页面Control.xaml</DependentUpon>
+    </Compile>
     <Compile Include="评测子页面Control.xaml.cs">
       <DependentUpon>评测子页面Control.xaml</DependentUpon>
     </Compile>
@@ -80,6 +86,14 @@
     <Page Include="NumbericBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="荐股子页面Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="学习子页面Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="评测子页面Control.xaml">
       <SubType>Designer</SubType>
