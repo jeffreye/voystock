@@ -33,7 +33,10 @@
                                         <RowDefinition x:Name="RowDefinition1"/>
                                     </Grid.RowDefinitions>
                                     <TabPanel x:Name="headerPanel" Background="Transparent" Grid.Column="0" IsItemsHost="true" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-                                    <Border x:Name="contentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                    <Border x:Name="contentPanel" BorderThickness="{TemplateBinding BorderThickness}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="UIElements/子页面BG.png"/>
+                                        </Border.Background>
                                         <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                                     </Border>
                                 </Grid>
@@ -876,7 +879,7 @@
                 <TabItem.Background>
                     <ImageBrush ImageSource="UIElements/结果BG_normal.png"/>
                 </TabItem.Background>
-                <Grid Background="#FFE5E5E5">
+                <Grid>
                     <TextBlock x:Name="方案名" Height="20.333" Margin="27,27,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50" d:LayoutOverrides="HorizontalAlignment"/>
                     <Label x:Name="方案名内容" Content="数据连接" HorizontalAlignment="Left" Height="25" Margin="176,27.333,0,0" VerticalAlignment="Top" Width="132" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#89000000" BorderBrush="#1E000000" d:LayoutOverrides="HorizontalAlignment"/>
                     <TextBlock x:Name="方案指标" Height="20.333" Margin="375.667,27,0,0" TextWrapping="Wrap" Text="方案指标" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="68.001"/>

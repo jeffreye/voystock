@@ -213,7 +213,26 @@
   <ItemGroup>
     <Resource Include="UIElements\dropdown-click.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="UIElements\btn_按钮_hover.png" />
+    <Resource Include="UIElements\btn_按钮_normal.png" />
+    <Resource Include="UIElements\btn_按钮_pressed.png" />
+    <Resource Include="UIElements\btn_评测按钮_hover.png" />
+    <Resource Include="UIElements\btn_评测按钮_normal.png" />
+    <Resource Include="UIElements\btn_评测按钮_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\dropdown-press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\menu.png" />
+    <Resource Include="UIElements\删除.png" />
+    <Resource Include="UIElements\条目bg-hvr.png" />
+    <Resource Include="UIElements\用户logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\子页面BG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
