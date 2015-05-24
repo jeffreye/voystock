@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:Voystock"
              mc:Ignorable="d" 
              d:DesignHeight="29" Width="80" Height="25">
-        <TextBox x:Name="TextBox" TextWrapping="Wrap" Text="0" PreviewTextInput="TextBox_PreviewTextInput" Height="25" Width="80" FontSize="13" Padding="-2,-2,0,0" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000"/>
+        <TextBox x:Name="TextBox" TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" FontSize="13" Padding="-2,-2,0,0" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" LostFocus="TextBox_LostFocus" KeyUp="TextBox_KeyUp"/>
 </UserControl>
