@@ -26,7 +26,7 @@
                                 <Grid x:Name="templateRoot" ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition x:Name="ColumnDefinition0"/>
-                                        <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+                                        <ColumnDefinition x:Name="ColumnDefinition1" Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition x:Name="RowDefinition0" Height="Auto" MinHeight="90"/>
@@ -667,7 +667,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="日期设置" Header="日期" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
+            <TabItem x:Name="日期设置" Header="日期" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}" HorizontalAlignment="Left" d:LayoutOverrides="Width">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -1492,27 +1492,28 @@
                     <CheckBox x:Name="全部股票" Content="全部股票" HorizontalAlignment="Left" Height="25" Margin="37.167,27,0,0" VerticalAlignment="Top" Width="102.666" FontSize="16"/>
                     <CheckBox x:Name="自定义添加" Content="自定义添加" HorizontalAlignment="Left" Height="25" Margin="293.167,27,0,0" VerticalAlignment="Top" Width="120.666" FontSize="16"/>
                     <local:NumbericBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="529.667,27,0,0" Width="115" Height="25"/>
-                    <ListView x:Name="listView1" HorizontalAlignment="Left" Margin="37.167,103,0,143" Width="200">
+                    <ListView x:Name="listView1" HorizontalAlignment="Left" Margin="37.167,103,0,0" Width="200" Height="238" VerticalAlignment="Top">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <ListView x:Name="listView1_Copy" Margin="334,103,0,143" HorizontalAlignment="Left" Width="200">
+                    <ListView x:Name="listView1_Copy" Margin="334,103,0,0" HorizontalAlignment="Left" Width="200" Height="238" VerticalAlignment="Top">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <ListView x:Name="listView1_Copy1" Margin="630,103,0,143" HorizontalAlignment="Left" Width="200">
+                    <ListView x:Name="listView1_Copy1" Margin="630,103,0,0" HorizontalAlignment="Left" Width="200" Height="238" VerticalAlignment="Top">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    <Button x:Name="button3" Content="GO" Margin="409.332,402.996,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
@@ -1723,7 +1724,6 @@
                     <ImageBrush ImageSource="结果BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5">
-                    <ProgressBar Margin="137.5,105,0,0" Height="98.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="134"/>
                     <TextBlock x:Name="方案名" Height="20.333" Margin="387,27,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50"/>
                     <TextBox x:Name="方案名内容" HorizontalAlignment="Left" Height="24" Margin="627,27,0,0" TextWrapping="Wrap" Text="接受输入" VerticalAlignment="Top" Width="212" FontSize="16" Background="{x:Null}" BorderBrush="#1E000000" Foreground="#89000000" Padding="-2,-2,0,0"/>
                     <TextBlock x:Name="方案指标及参数" Height="20.333" Margin="387,126.002,0,0" TextWrapping="Wrap" Text="方案指标及参数" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="116.667"/>
@@ -1731,12 +1731,17 @@
                     <Label x:Name="label_Copy" Content="数据连接" HorizontalAlignment="Left" Margin="627,206,0,0" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000" Height="25" VerticalAlignment="Top"/>
                     <Label x:Name="label_Copy1" Content="数据连接" HorizontalAlignment="Left" Margin="627,0,0,173" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000" Height="25" VerticalAlignment="Bottom"/>
                     <Label x:Name="label_Copy2" Content="数据连接" HorizontalAlignment="Left" Margin="627,0,0,93" Width="212" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000" Height="25" VerticalAlignment="Bottom"/>
-                    <Button x:Name="button1" Content="Button" Height="40.5" Margin="430.5,0,0,29.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="169.5"/>
-                    <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="40.5" Margin="669,0,0,29.5" VerticalAlignment="Bottom" Width="142.5"/>
+                    <Button x:Name="查看交易详情" Content="查看交易详情" Height="40.5" Margin="430.5,0,0,29.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="169.5"/>
+                    <Button x:Name="学习此方案" Content="学习此方案" HorizontalAlignment="Left" Height="40.5" Margin="669,0,0,29.5" VerticalAlignment="Bottom" Width="142.5"/>
+                    <Viewbox x:Name="胜率可视化" HorizontalAlignment="Left" Margin="134.5,51,0,0" Width="153" Height="153" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="胜率" HorizontalAlignment="Left" Margin="195.334,229.75,0,0" TextWrapping="Wrap" Text="胜率" Width="32.333" RenderTransformOrigin="1.025,0.478" FontSize="16" Foreground="#89000000" Height="19" VerticalAlignment="Top"/>
+                    <Viewbox x:Name="年化收益率可视化" HorizontalAlignment="Left" Margin="134.5,319,0,0" Width="153" Height="50" VerticalAlignment="Top" OpacityMask="Black"/>
+                    <TextBlock x:Name="年化收益率" HorizontalAlignment="Left" Margin="170,391,0,0" TextWrapping="Wrap" Text="年化收益率" Width="81.667" RenderTransformOrigin="1.025,0.478" FontSize="16" Height="19" VerticalAlignment="Top" Foreground="#89000000"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="728,0,0,33.76" VerticalAlignment="Bottom" Width="164" Height="40.24"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24"/>
+        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment"/>
 
     </Grid>
 </UserControl>

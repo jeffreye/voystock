@@ -31,11 +31,12 @@
             <Guide Alignment="Top" Position="484" />
             <Guide Alignment="Left" Position="630" />
             <Guide Alignment="Left" Position="390" />
-            <Guide Alignment="Top" Position="244" />
             <Guide Alignment="Top" Position="24" />
-            <Guide Alignment="Left" Position="842" />
-            <Guide Alignment="Top" Position="324" />
-            <Guide Alignment="Top" Position="404" />
+            <Guide Alignment="Left" Position="833" />
+            <Guide Alignment="Top" Position="412" />
+            <Guide Alignment="Left" Position="872" />
+            <Guide Alignment="Left" Position="396" />
+            <Guide Alignment="Left" Position="214" />
           </Guides>
         </GuideModel>
       </GuideModels>
