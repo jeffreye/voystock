@@ -642,6 +642,7 @@
                     <local:NumbericBox x:Name="参数设置1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80" FontSize="13"/>
                     <local:NumbericBox x:Name="参数设置2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
                     <local:NumbericBox x:Name="参数设置3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80"/>
+                    <TextBlock x:Name="不需要输入参数" HorizontalAlignment="Left" Height="13.167" Margin="37.833,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104.25" FontSize="11" Foreground="#DDFF0000" Text="不需要输入参数"/>
                     <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="17,177,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="403"/>
                     <TextBlock x:Name="买入点" HorizontalAlignment="Left" Height="20" Margin="37,218.5,0,0" TextWrapping="Wrap" Text="买入点" VerticalAlignment="Top" Width="40" FontSize="13" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="卖出点" HorizontalAlignment="Left" Margin="37,276.836,0,0" TextWrapping="Wrap" Text="卖出点" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Top"/>
@@ -666,7 +667,6 @@
                         <System:String>6</System:String>
                     </ListView>
                     <Button x:Name="GO" Content="GO" Margin="640.332,407.496,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50"/>
-                    <TextBlock x:Name="不需要输入参数" HorizontalAlignment="Left" Height="13.167" Margin="37.833,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104.25" FontSize="11" Foreground="#DDFF0000" Text="不需要输入参数"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="结果" Header="结果" Margin="42.335,-1.75,-42.335,0" Height="60" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}" HorizontalAlignment="Left" Width="166">
