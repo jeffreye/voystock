@@ -29,7 +29,19 @@ namespace Voystock
 		[Description("Test text displayed in the textbox"), Category("Data")]
 		public int Text
 		{
-			get { return int.Parse(TextBox.Text); }
+			get
+			{
+				int value;
+				if (int.TryParse(TextBox.Text, out value))
+				{
+					return value;
+				}
+				else
+				{
+					value = MinValue;
+					return value;
+				}
+			}
 			set
 			{
 				TextBox.Text = value.ToString();
@@ -80,15 +92,19 @@ namespace Voystock
 			ValidateValue();
 		}
 
-		private void ValidateValue()
+		private int ValidateValue()
 		{
-			if (string.IsNullOrEmpty(TextBox.Text))
+			int value;
+			if (int.TryParse(TextBox.Text, out value))
 			{
-				TextBox.Text = MinValue.ToString();
-				return;
+				TextBox.Text = Math.Max(Math.Min(value, MaxValue), MinValue).ToString();
 			}
-			int value = int.Parse(TextBox.Text);
-			TextBox.Text = Math.Max(Math.Min(value, MaxValue), MinValue).ToString();
+			else
+			{
+				value = MinValue;
+				TextBox.Text = value.ToString();
+			}
+			return value;
 		}
 
 		private void TextBox_KeyUp(object sender, KeyEventArgs e)
