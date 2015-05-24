@@ -34,9 +34,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.1.1.35049, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.1.1.35049, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.1.1.35053, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,6 +77,11 @@
     <Compile Include="NumbericBox.xaml.cs">
       <DependentUpon>NumbericBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\EvaluationViewModel.cs" />
+    <Compile Include="ViewModel\LearningViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RecommendationViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="荐股子页面Control.xaml.cs">
       <DependentUpon>荐股子页面Control.xaml</DependentUpon>
     </Compile>
@@ -119,6 +143,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Design\projectGuides.guides" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,65 +154,66 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="LOGO.png" />
+    <Resource Include="UIElements\LOGO.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="评测_hover.png" />
+    <Resource Include="UIElements\评测_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="评测_pressed.png" />
+    <Resource Include="UIElements\评测_pressed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="评测_normal.png" />
+    <Resource Include="UIElements\评测_normal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="学习_hover.png" />
+    <Resource Include="UIElements\学习_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="学习_pressed.png" />
+    <Resource Include="UIElements\学习_pressed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="学习_normal.png" />
+    <Resource Include="UIElements\学习_normal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="荐股_hover.png" />
+    <Resource Include="UIElements\荐股_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="荐股_pressed.png" />
+    <Resource Include="UIElements\荐股_pressed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="荐股_normal.png" />
+    <Resource Include="UIElements\荐股_normal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="主BG.png" />
+    <Resource Include="UIElements\主BG.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="指标BG_normal.png" />
+    <Resource Include="UIElements\指标BG_normal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="指标BG_pressed.png" />
+    <Resource Include="UIElements\指标BG_pressed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="指标BG_hover.png" />
-    <Resource Include="时段BG_hover.png" />
-    <Resource Include="时段BG_normal.png" />
-    <Resource Include="时段BG_pressed.png" />
-    <Resource Include="标的BG_hover.png" />
-    <Resource Include="标的BG_normal.png" />
-    <Resource Include="标的BG_pressed.png" />
-    <Resource Include="结果BG_hover.png" />
-    <Resource Include="结果BG_normal.png" />
-    <Resource Include="结果BG_pressed.png" />
+    <Resource Include="UIElements\指标BG_hover.png" />
+    <Resource Include="UIElements\时段BG_hover.png" />
+    <Resource Include="UIElements\时段BG_normal.png" />
+    <Resource Include="UIElements\时段BG_pressed.png" />
+    <Resource Include="UIElements\标的BG_hover.png" />
+    <Resource Include="UIElements\标的BG_normal.png" />
+    <Resource Include="UIElements\标的BG_pressed.png" />
+    <Resource Include="UIElements\结果BG_hover.png" />
+    <Resource Include="UIElements\结果BG_normal.png" />
+    <Resource Include="UIElements\结果BG_pressed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="dropdown-hvr.png" />
+    <Resource Include="UIElements\dropdown-hvr.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="dropdow_nrml.png" />
+    <Resource Include="UIElements\dropdow_nrml.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="dropdown-click.png" />
+    <Resource Include="UIElements\dropdown-click.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

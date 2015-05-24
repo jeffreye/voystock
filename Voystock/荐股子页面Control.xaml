@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Voystock"
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Voystock.荐股子页面Control"
              mc:Ignorable="d" 
-             d:DesignHeight="674" d:DesignWidth="902">
+             d:DesignHeight="674" d:DesignWidth="902" DataContext="{Binding Recommendation, Mode=OneWay, Source={StaticResource Locator}}">
     <Grid>
         <TabControl x:Name="荐股子页面" HorizontalAlignment="Right" Height="580" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,94" Style="{DynamicResource TabControlStyle1}">
             <TabControl.Resources>
@@ -87,14 +87,14 @@
                             </Setter.Value>
                         </Setter>
                     </Style>
-                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="指标BG_normal.png" />
+                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="UIElements/指标BG_normal.png" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#00ACACAC"/>
-                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="指标BG_hover.png" />
+                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="UIElements/指标BG_hover.png" />
                     <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#007EB4EA"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#00000000"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#00D9D9D9"/>
                     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#00000000"/>
-                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="指标BG_pressed.png"/>
+                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="UIElements/指标BG_pressed.png"/>
                     <Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}">
                         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                         <Setter Property="Foreground" Value="Black"/>
@@ -281,26 +281,26 @@
                     </Style>
                 </TabItem.Resources>
                 <TabItem.Background>
-                    <ImageBrush ImageSource="指标BG_normal.png"/>
+                    <ImageBrush ImageSource="UIElements/指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
                     <ComboBox x:Name="方案下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="27,27,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}">
                         <ComboBox.Resources>
-                            <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="dropdow_nrml.png" />
+                            <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="UIElements/dropdow_nrml.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
                             <SolidColorBrush x:Key="ComboBox.Static.Editable.Background" Color="#FFFFFFFF"/>
                             <SolidColorBrush x:Key="ComboBox.Static.Editable.Border" Color="#FFABADB3"/>
                             <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Background" Color="Transparent"/>
                             <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Border" Color="Transparent"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Glyph" Color="#FF000000"/>
-                            <ImageBrush x:Key="ComboBox.MouseOver.Background" ImageSource="dropdown-hvr.png" />
+                            <ImageBrush x:Key="ComboBox.MouseOver.Background" ImageSource="UIElements/dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Border" Color="#007EB4EA"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Background"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Border" Color="#007EB4EA"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Button.Background" Color="#00000000"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Button.Border" Color="#007EB4EA"/>
                             <SolidColorBrush x:Key="ComboBox.Pressed.Glyph" Color="#FF000000"/>
-                            <ImageBrush x:Key="ComboBox.Pressed.Background" ImageSource="dropdown-hvr.png" />
+                            <ImageBrush x:Key="ComboBox.Pressed.Background" ImageSource="UIElements/dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBox.Pressed.Border" Color="#00569DE5"/>
                             <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Background" Color="#FFFFFFFF"/>
                             <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Border" Color="#00569DE5"/>
@@ -540,16 +540,16 @@
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
-                            <ImageBrush x:Key="ComboBoxItem.ItemsviewHover.Background" ImageSource="dropdown-hvr.png" />
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewHover.Background" ImageSource="UIElements/dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Border" Color="#0026A0DA"/>
-                            <ImageBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" ImageSource="dropdown-hvr.png" />
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" ImageSource="UIElements/dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Border" Color="#0026A0DA"/>
-                            <ImageBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" ImageSource="dropdown-hvr.png" />
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" ImageSource="UIElements/dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Border" Color="#00006CD9"/>
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Background" Color="#3DDADADA"/>
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Border" Color="#FFDADADA"/>
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewFocus.Border" Color="#0026A0DA"/>
-                            <ImageBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" ImageSource="dropdown-hvr.png" />
+                            <ImageBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" ImageSource="UIElements/dropdown-hvr.png" />
                             <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#0026A0DA"/>
                             <Style x:Key="ComboBoxItemStyle1" TargetType="{x:Type ComboBoxItem}">
                                 <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -664,14 +664,14 @@
                             </Setter.Value>
                         </Setter>
                     </Style>
-                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="结果BG_normal.png" />
+                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="UIElements/结果BG_normal.png" />
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#00ACACAC"/>
-                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="结果BG_hover.png" />
+                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="UIElements/结果BG_hover.png" />
                     <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#007EB4EA"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
                     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#00ACACAC"/>
-                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="结果BG_pressed.png" />
+                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="UIElements/结果BG_pressed.png" />
                     <Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}">
                         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                         <Setter Property="Foreground" Value="Black"/>
@@ -858,7 +858,7 @@
                     </Style>
                 </TabItem.Resources>
                 <TabItem.Background>
-                    <ImageBrush ImageSource="结果BG_normal.png"/>
+                    <ImageBrush ImageSource="UIElements/结果BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5">
                     <ListView x:Name="推荐结果内容" Margin="27,27,30,30">
