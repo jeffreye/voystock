@@ -627,5 +627,23 @@ namespace Voystock.ViewModel
 					() => 评测结束));
 			}
 		}
+
+		private RelayCommand _start;
+
+		/// <summary>
+		/// Gets the 开始评测.
+		/// </summary>
+		public RelayCommand 开始评测
+		{
+			get
+			{
+				return _start
+					?? (_start = new RelayCommand(
+					() =>
+					{
+
+					}));
+			}
+		}
 	}
 }
