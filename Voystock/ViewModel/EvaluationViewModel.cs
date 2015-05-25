@@ -664,50 +664,5 @@ namespace Voystock.ViewModel
 			}
 		}
 
-		private RelayCommand<System.Windows.Controls.TabControl> _prevStep;
-
-		/// <summary>
-		/// Gets the 上一步.
-		/// </summary>
-		public RelayCommand<System.Windows.Controls.TabControl> 上一步
-		{
-			get
-			{
-				return _prevStep
-					?? (_prevStep = new RelayCommand<System.Windows.Controls.TabControl>(
-					p =>
-					{
-						Console.WriteLine("prev step");
-						if (!上一步.CanExecute(p))
-						{
-							return;
-						}
-
-						p.SelectedIndex--;
-					}));
-			}
-		}
-
-		private RelayCommand<System.Windows.Controls.TabControl> _nextStep;
-
-		/// <summary>
-		/// Gets the 下一步.
-		/// </summary>
-		public RelayCommand<System.Windows.Controls.TabControl> 下一步
-		{
-			get
-			{
-				return _nextStep
-					?? (_nextStep = new RelayCommand<System.Windows.Controls.TabControl>(
-					p =>
-					{
-						if (!下一步.CanExecute(p))
-						{
-							return;
-						}
-						p.SelectedIndex++;
-					}));
-			}
-		}
 	}
 }

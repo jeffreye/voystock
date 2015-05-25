@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Voystock"
-             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Voystock.荐股子页面Control"
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="userControl" x:Class="Voystock.荐股子页面Control"
              mc:Ignorable="d" 
              d:DesignHeight="674" d:DesignWidth="902" DataContext="{Binding Recommendation, Mode=OneWay, Source={StaticResource Locator}}">
     <Grid>
-        <TabControl x:Name="荐股子页面" HorizontalAlignment="Right" Height="580" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,94" Style="{DynamicResource TabControlStyle1}">
+        <TabControl x:Name="荐股子页面" HorizontalAlignment="Right" Height="580" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,94" Style="{DynamicResource TabControlStyle1}" SelectionChanged="荐股子页面_SelectionChanged">
             <TabControl.Resources>
                 <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#FFFFFF"/>
                 <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#ACACAC"/>
@@ -870,8 +870,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24"/>
-        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment"/>
+        <Button x:Name="button" Content="{Binding NextTab, ElementName=userControl, Mode=OneWay}" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" Command="{Binding 下一步, ElementName=userControl, Mode=OneWay}"/>
+        <Button x:Name="button_Copy" Content="{Binding PrevTab, ElementName=userControl, Mode=OneWay}" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment" Command="{Binding 上一步, ElementName=userControl, Mode=OneWay}"/>
 
     </Grid>
 </UserControl>
