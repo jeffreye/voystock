@@ -42,6 +42,29 @@ namespace Voystock.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// The <see cref="已选择方案" /> property's name.
+		/// </summary>
+		public const string 已选择方案PropertyName = "已选择方案";
+
+		private string _selectedScheme = "MA60";
+
+		/// <summary>
+		/// Sets and gets the 已选择方案 property.
+		/// Changes to that property's value raise the PropertyChanged event. 
+		/// </summary>
+		public string 已选择方案
+		{
+			get
+			{
+				return _selectedScheme;
+			}
+			set
+			{
+				Set(已选择方案PropertyName, ref _selectedScheme, value);
+			}
+		}
+
 
 		/// <summary>
 		/// The <see cref="已配置的指标" /> property's name.

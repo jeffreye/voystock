@@ -493,7 +493,7 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已配置的指标PropertyName = "已配置的指标";
 
-		private IEnumerable<string> _configedIndicators = new [] {"MACD(10,20,5)" };
+		private IEnumerable<string> _configedIndicators = new[] { "MACD(10,20,5)", "MACD(10,20,5)", "MACD(10,20,5)" };
 
 		/// <summary>
 		/// Sets and gets the 已配置的指标 property.
@@ -642,6 +642,70 @@ namespace Voystock.ViewModel
 					() =>
 					{
 
+					}));
+			}
+		}
+
+		private RelayCommand<string> _addStock;
+
+		/// <summary>
+		/// Gets the 自定义添加股票.
+		/// </summary>
+		public RelayCommand<string> 自定义添加股票
+		{
+			get
+			{
+				return _addStock
+					?? (_addStock = new RelayCommand<string>(
+					code =>
+					{
+						Console.WriteLine(code);
+					}));
+			}
+		}
+
+		private RelayCommand<System.Windows.Controls.TabControl> _prevStep;
+
+		/// <summary>
+		/// Gets the 上一步.
+		/// </summary>
+		public RelayCommand<System.Windows.Controls.TabControl> 上一步
+		{
+			get
+			{
+				return _prevStep
+					?? (_prevStep = new RelayCommand<System.Windows.Controls.TabControl>(
+					p =>
+					{
+						Console.WriteLine("prev step");
+						if (!上一步.CanExecute(p))
+						{
+							return;
+						}
+
+						p.SelectedIndex--;
+					}));
+			}
+		}
+
+		private RelayCommand<System.Windows.Controls.TabControl> _nextStep;
+
+		/// <summary>
+		/// Gets the 下一步.
+		/// </summary>
+		public RelayCommand<System.Windows.Controls.TabControl> 下一步
+		{
+			get
+			{
+				return _nextStep
+					?? (_nextStep = new RelayCommand<System.Windows.Controls.TabControl>(
+					p =>
+					{
+						if (!下一步.CanExecute(p))
+						{
+							return;
+						}
+						p.SelectedIndex++;
 					}));
 			}
 		}

@@ -45,6 +45,10 @@ namespace Voystock.ViewModel
 			SimpleIoc.Default.Register<MainViewModel>();
 
 			SimpleIoc.Default.Register<EvaluationViewModel>();
+
+			SimpleIoc.Default.Register<LearningViewModel>();
+
+			SimpleIoc.Default.Register<RecommendationViewModel>();
         }
 
 		public MainViewModel Main
@@ -63,19 +67,19 @@ namespace Voystock.ViewModel
 			}
 		}
 
-		public MainViewModel Learning
+		public LearningViewModel Learning
 		{
 			get
 			{
-				return ServiceLocator.Current.GetInstance<MainViewModel>();
+				return ServiceLocator.Current.GetInstance<LearningViewModel>();
 			}
 		}
 
-		public MainViewModel Recommendation
+		public RecommendationViewModel Recommendation
 		{
 			get
 			{
-				return ServiceLocator.Current.GetInstance<MainViewModel>();
+				return ServiceLocator.Current.GetInstance<RecommendationViewModel>();
 			}
 		}
         

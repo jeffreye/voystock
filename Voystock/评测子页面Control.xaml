@@ -651,12 +651,17 @@
                     <Label x:Name="其他内容2" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,394.667,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
                     <TextBlock x:Name="方案提示" HorizontalAlignment="Left" Height="44" Margin="477,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.666" FontSize="13" Padding="0,5,0,0"><Run Text="方案中有多个指标时，有效的方案买入信号为"/><LineBreak/><Run Text="三日内各指标均发出买入信号 "/></TextBlock>
                     <Path x:Name="方案提示下分割线" Data="M479.66667,107.66667 L849.02166,107.66667" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="477,78,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="372"/>
-                    <ListView x:Name="listView" HorizontalAlignment="Left" Margin="477,109.172,0,155.828" Width="372" ItemsSource="{Binding 已配置的指标}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
+                    <ListView x:Name="listView" HorizontalAlignment="Left" Margin="477,109.172,0,155.828" Width="372" ItemsSource="{Binding 已配置的指标}" ItemTemplate="{DynamicResource DataTemplate1}">
+                        <ListView.Resources>
+                            <Style TargetType="GridViewColumnHeader">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </Style>
+                            <DataTemplate x:Key="DataTemplate1">
+                                <Grid>
+                                    <Label x:Name="label" Content="{Binding Mode=OneWay}" d:LayoutOverrides="Width, Height" Padding="0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.Resources>
                     </ListView>
                 </Grid>
             </TabItem>
@@ -1495,7 +1500,7 @@
                     <Button x:Name="GO" Content="GO" Margin="409.332,402.996,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
+            <TabItem x:Name="结果" Header="结果" Margin="130,-2,-132,0" Width="166" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}" IsEnabled="{Binding 评测结束}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -1719,8 +1724,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24"/>
-        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment"/>
+        <Button x:Name="button" Content="下一步" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" Command="{Binding 下一步, Mode=OneWay}" CommandParameter="{Binding ElementName=评测子页面, Mode=OneWay}"/>
+        <Button x:Name="button_Copy" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment" CommandParameter="{Binding ElementName=评测子页面}" Command="{Binding 上一步, Mode=OneWay}" Content="{Binding SelectedItem.Header, ElementName=评测子页面}" ContentStringFormat="上一步:{0}"/>
 
     </Grid>
 </UserControl>

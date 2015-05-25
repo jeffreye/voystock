@@ -39,6 +39,7 @@ namespace Voystock
 				else
 				{
 					value = MinValue;
+					TextBox.Text = value.ToString();
 					return value;
 				}
 			}

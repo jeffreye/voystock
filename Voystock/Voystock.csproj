@@ -233,6 +233,12 @@
   <ItemGroup>
     <Resource Include="UIElements\子页面BG.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Voystock.Communication\Voystock.Communication.csproj">
+      <Project>{be90e29c-da49-40a7-97d9-c9c5cb04e9d9}</Project>
+      <Name>Voystock.Communication</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
