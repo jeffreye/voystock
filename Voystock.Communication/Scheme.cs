@@ -53,4 +53,12 @@ namespace Voystock.Communication
 		[DataMember]
 		public bool EnableRecommendation { get; set; }
 	}
+
+
+    [CollectionDataContract]
+    public class Schemes : List<Scheme>
+    {
+        public Schemes() { }
+        public Schemes(List<Scheme> schemes) : base(schemes) { }
+    }
 }

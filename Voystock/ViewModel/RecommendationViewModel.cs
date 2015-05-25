@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Voystock.ViewModel
 {
@@ -23,7 +24,7 @@ namespace Voystock.ViewModel
 		/// The <see cref="方案列表" /> property's name.
 		/// </summary>
 		public const string 方案列表PropertyName = "方案列表";
-
+        
 		private IEnumerable<string> _schemes = new []{"plan a","plan b"};
 
 		/// <summary>
