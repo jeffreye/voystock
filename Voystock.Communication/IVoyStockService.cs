@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace Voystock.Communication
@@ -11,56 +12,98 @@ namespace Voystock.Communication
 	[ServiceContract]
 	public interface IVoyStockService
 	{
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "scheme/all",Method ="GET")]
 		[OperationContract]
 		List<Scheme> GetAllScheme();
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "scheme/{id}", Method = "GET")]
+        [OperationContract]
 		Scheme GetScheme(int id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "scheme/{id}", Method = "DELETE")]
+        [OperationContract]
 		void DeleteScheme(int id);
 
-		[OperationContract]
-		void ModifyScheme(Scheme scheme);
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "scheme/{id}", Method = "POST")]
+        [OperationContract]
+		void AddOrModifyScheme(Scheme scheme);
 
-		#region Evaluation
+        #region Evaluation
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "evaluation/{scheme_id}", Method = "PUT")]
+        [OperationContract]
 		void Evaluate(int scheme_id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "evaluation/{scheme_id}", Method = "GET")]
+        [OperationContract]
 		EvaluationResult GetEvaluationResult(int scheme_id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "evaluation/{scheme_id}", Method = "DELETE")]
+        [OperationContract]
 		void StopEvaluation(int scheme_id);
 
-		#endregion
+        #endregion
 
-		#region Learning
+        #region Learning
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "learning/{scheme_id}", Method = "PUT")]
+        [OperationContract]
 		void Learn(int scheme_id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "learning/{scheme_id}", Method = "GET")]
+        [OperationContract]
 		LearningResult GetLearningResult(int scheme_id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "learning/{scheme_id}", Method = "DELETE")]
+        [OperationContract]
 		void StopLearning(int scheme_id);
 
-		#endregion
+        #endregion
 
-		#region Recommendation
+        #region Recommendation
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "recommendation/{scheme_id}", Method = "PUT")]
+        [OperationContract]
 		void Recommend(int scheme_id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "recommendation/{scheme_id}", Method = "GET")]
+        [OperationContract]
 		RecommendationResult GetRecommendationResult(int scheme_id);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "recommendation/{scheme_id}/{date}", Method = "GET")]
+        [OperationContract]
 		RecommendationResult GetRecommendationResultOnDate(int scheme_id,DateTime date);
 
-		[OperationContract]
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "recommendation/{scheme_id}", Method = "DELETE")]
+        [OperationContract]
 		void StopRecommendationResult(int scheme_id);
 
 
