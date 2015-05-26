@@ -212,6 +212,28 @@ namespace Voystock.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// The <see cref="个股模式" /> property's name.
+		/// </summary>
+		public const string 个股模式PropertyName = "个股模式";
+
+		private bool _independent = false;
+
+		/// <summary>
+		/// Sets and gets the 个股模式 property.
+		/// Changes to that property's value raise the PropertyChanged event. 
+		/// </summary>
+		public bool 个股模式
+		{
+			get
+			{
+				return _independent;
+			}
+			set
+			{
+				Set(个股模式PropertyName, ref _independent, value);
+			}
+		}
 
 		private RelayCommand _start;
 

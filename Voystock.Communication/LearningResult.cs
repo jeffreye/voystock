@@ -11,6 +11,10 @@ namespace Voystock.Communication
 	[DataContract]
 	public class LearningResult
 	{
+        [DataMember]
+        public bool LearningDone { get; set; }
+
+        [DataMember]
 		public List<Indicator> BestParameters { get; set; }
 	}
 }

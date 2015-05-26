@@ -663,6 +663,7 @@
                             </DataTemplate>
                         </ListView.Resources>
                     </ListView>
+                    <ProgressBar HorizontalAlignment="Left" Height="120" Margin="647,354,0,0" VerticalAlignment="Top" Width="120" Value="80" Template="{DynamicResource CircularProgressBar}"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="日期设置" Header="日期" Height="60" Margin="42,-2,-42,0" VerticalAlignment="Top" Width="166" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}" HorizontalAlignment="Left" d:LayoutOverrides="Width">

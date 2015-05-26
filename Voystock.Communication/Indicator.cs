@@ -15,6 +15,6 @@ namespace Voystock.Communication
 		public string Name { get; set; }
 
 		[DataMember]
-		public List<int> Parameters { get; set; }
+		public List<float> Parameters { get; set; }
 	}
 }

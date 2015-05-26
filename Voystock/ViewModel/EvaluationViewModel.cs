@@ -420,6 +420,75 @@ namespace Voystock.ViewModel
 		}
 
 		/// <summary>
+		/// The <see cref="指标参数1" /> property's name.
+		/// </summary>
+		public const string 指标参数1PropertyName = "指标参数1";
+
+		private int _param1 = 8;
+
+		/// <summary>
+		/// Sets and gets the 指标参数1 property.
+		/// Changes to that property's value raise the PropertyChanged event. 
+		/// </summary>
+		public int 指标参数1
+		{
+			get
+			{
+				return _param1;
+			}
+			set
+			{
+				Set(指标参数1PropertyName, ref _param1, value);
+			}
+		}
+
+		/// <summary>
+		/// The <see cref="指标参数2" /> property's name.
+		/// </summary>
+		public const string 指标参数2PropertyName = "指标参数2";
+
+		private int _param2 = 20;
+
+		/// <summary>
+		/// Sets and gets the 指标参数2 property.
+		/// Changes to that property's value raise the PropertyChanged event. 
+		/// </summary>
+		public int 指标参数2
+		{
+			get
+			{
+				return _param2;
+			}
+			set
+			{
+				Set(指标参数2PropertyName, ref _param2, value);
+			}
+		}
+
+		/// <summary>
+		/// The <see cref="指标参数3" /> property's name.
+		/// </summary>
+		public const string 指标参数3PropertyName = "指标参数3";
+
+		private int _param3 = 5;
+
+		/// <summary>
+		/// Sets and gets the 指标参数3 property.
+		/// Changes to that property's value raise the PropertyChanged event. 
+		/// </summary>
+		public int 指标参数3
+		{
+			get
+			{
+				return _param3;
+			}
+			set
+			{
+				Set(指标参数3PropertyName, ref _param3, value);
+			}
+		}
+
+		/// <summary>
 		/// The <see cref="当前选中股票的买入点" /> property's name.
 		/// </summary>
 		public const string 当前选中股票的买入点PropertyName = "当前选中股票的买入点";

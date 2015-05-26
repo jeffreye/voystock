@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Voystock">
+    <local:ValueToProcessConverter x:Key="ValueToProcessConverter"/>
+    <ControlTemplate x:Key="CircularProgressBar" TargetType="{x:Type ProgressBar}">
+        <Border Background="{TemplateBinding Value, Converter={StaticResource ValueToProcessConverter}, ConverterParameter=200}"/>
+    </ControlTemplate>
     <ControlTemplate x:Key="TabTemplate" TargetType="{x:Type TabItem}">
         <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
             <Border x:Name="mainBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Background="{TemplateBinding Background}" Margin="0">

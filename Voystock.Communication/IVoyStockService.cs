@@ -14,9 +14,9 @@ namespace Voystock.Communication
 	{
         [WebInvoke
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "scheme/all",Method ="GET")]
+            UriTemplate = "scheme_all",Method ="GET")]
 		[OperationContract]
-        Schemes GetAllScheme();
+        List<Scheme> GetAllScheme();
 
         [WebInvoke
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
@@ -32,9 +32,9 @@ namespace Voystock.Communication
 
         [WebInvoke
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "scheme/{id}", Method = "POST")]
+            UriTemplate = "scheme/", Method = "POST")]
         [OperationContract]
-        void AddOrModifyScheme(string id);
+        void AddOrModifyScheme(Scheme s);
 
         #region Evaluation
 
