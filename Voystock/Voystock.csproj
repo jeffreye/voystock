@@ -242,6 +242,10 @@
   <ItemGroup>
     <Resource Include="UIElements\子页面BG.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\OFF.png" />
+    <Resource Include="UIElements\ON.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
