@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Voystock.ViewModel
 {
@@ -370,6 +371,10 @@ namespace Voystock.ViewModel
 			set
 			{
 				Set(全部股票选中PropertyName, ref _selectAllStock, value);
+                if (value)
+                {
+                    已选股票 = new[] { "全部股票" };
+                }
 			}
 		}
 
@@ -562,7 +567,7 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已配置的指标PropertyName = "已配置的指标";
 
-		private IEnumerable<string> _configedIndicators = new[] { "MACD(10,20,5)", "MACD(10,20,5)", "MACD(10,20,5)" };
+		private IEnumerable<string> _configedIndicators = new[] { "MACD(10,20,5)", "MA(30)", "KDJ(9,3,3)" };
 
 		/// <summary>
 		/// Sets and gets the 已配置的指标 property.
@@ -690,7 +695,10 @@ namespace Voystock.ViewModel
 						{
 							return;
 						}
-
+                        if (System.IO.File.Exists("交易详情.xlsx"))
+                        {
+                            System.Diagnostics.Process.Start("交易详情.xlsx");
+                        }
 
 					},
 					() => 评测结束));
@@ -710,7 +718,18 @@ namespace Voystock.ViewModel
 					?? (_start = new RelayCommand(
 					() =>
 					{
+                        Task.Run(() =>
+                        {
+                            for (int i = 0; i <= 100; i++)
+                            {
+                                this.评测进度 = i;
+                                System.Threading.Thread.Sleep(100);
+                            }
+                            评测结束 = true;
 
+                            胜率 = 30;
+                            年化收益率 = 0.17f;
+                        });
 					}));
 			}
 		}

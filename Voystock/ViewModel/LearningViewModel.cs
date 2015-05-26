@@ -252,5 +252,28 @@ namespace Voystock.ViewModel
 					}));
 			}
 		}
+
+		private RelayCommand _checkResults;
+
+		/// <summary>
+		/// Gets the 查看学习详情.
+		/// </summary>
+		public RelayCommand 查看学习详情
+		{
+			get
+			{
+				return _checkResults
+					?? (_checkResults = new RelayCommand(
+					() =>
+					{
+						if (System.IO.File.Exists("学习详情.xlsx"))
+						{
+							System.Diagnostics.Process.Start("学习详情.xlsx");
+						}
+					}));
+			}
+		}
+
+		
 	}
 }
