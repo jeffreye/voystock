@@ -934,14 +934,14 @@
                     <TextBlock x:Name="方案指标" Height="20.333" Margin="375.667,27,0,0" TextWrapping="Wrap" Text="方案指标" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="68.001"/>
                     <Label x:Name="方案指标内容" Content="数据连接" HorizontalAlignment="Left" Height="25" Margin="522,27.331,0,0" VerticalAlignment="Top" Width="317" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#89000000" BorderBrush="#1E000000"/>
                     <TextBlock x:Name="个股模式" Height="20.333" Margin="27,84,0,0" TextWrapping="Wrap" Text="个股模式" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="67.333" d:LayoutOverrides="HorizontalAlignment"/>
-                    <ToggleButton x:Name="toggleButton" Content="switch" HorizontalAlignment="Left" Margin="176,84,0,0" VerticalAlignment="Top" Height="21" Width="37" FontSize="10" Style="{DynamicResource ToggleButtonStyle1}">
+                    <ToggleButton x:Name="toggleButton" Content="switch" HorizontalAlignment="Left" Margin="176,84,0,0" VerticalAlignment="Top" Height="21" Width="37" FontSize="10" Style="{DynamicResource ToggleButtonStyle1}" Foreground="{x:Null}">
                         <ToggleButton.Resources>
-                            <ImageBrush x:Key="Button.Static.Background" ImageSource="OFF.png" />
-                            <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+                            <ImageBrush x:Key="Button.Static.Background" ImageSource="OFF.png" Stretch="None" />
+                            <SolidColorBrush x:Key="Button.Static.Border" Color="#00707070"/>
                             <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
                             <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-                            <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-                            <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+                            <ImageBrush x:Key="Button.Pressed.Background" ImageSource="ON.png" Stretch="None" />
+                            <SolidColorBrush x:Key="Button.Pressed.Border" Color="#002C628B"/>
                             <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
                             <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
                             <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
