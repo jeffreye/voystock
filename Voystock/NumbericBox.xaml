@@ -6,5 +6,74 @@
              xmlns:local="clr-namespace:Voystock"
              mc:Ignorable="d" 
              d:DesignHeight="29" Width="80" Height="25">
-        <TextBox x:Name="TextBox" TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" FontSize="13" Padding="-2,-2,0,0" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" LostFocus="TextBox_LostFocus" KeyUp="TextBox_KeyUp"/>
+    <TextBox x:Name="TextBox" TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" FontSize="13" Padding="-2,-2,0,0" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" LostFocus="TextBox_LostFocus" KeyUp="TextBox_KeyUp" Background="{x:Null}" SelectionBrush="#FF25FFFF" CaretBrush="#FF1FCBCC" Style="{DynamicResource TextBoxStyle1}">
+        <TextBox.Resources>
+            <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+            <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+            <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+            <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="AllowDrop" Value="true"/>
+                <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="Storyboard1">
+                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderThickness)" Storyboard.TargetName="PART_ContentHost">
+                                        <EasingThicknessKeyFrame KeyTime="0" Value="0,0,0,1"/>
+                                    </ThicknessAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="PART_ContentHost">
+                                        <EasingColorKeyFrame KeyTime="0" Value="#1E000000"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                                <Storyboard x:Key="Storyboard2">
+                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderThickness)" Storyboard.TargetName="PART_ContentHost">
+                                        <EasingThicknessKeyFrame KeyTime="0" Value="0,0,0,2"/>
+                                    </ThicknessAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="PART_ContentHost">
+                                        <EasingColorKeyFrame KeyTime="0" Value="#FF1FCBCC"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="PART_ContentHost">
+                                        <EasingColorKeyFrame KeyTime="0" Value="#DD000000"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" BorderBrush="Black"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="TextBlock.TextWrapping" Value="NoWrap"/>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                            <Condition Property="IsSelectionActive" Value="false"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
+        </TextBox.Resources>
+    </TextBox>
 </UserControl>

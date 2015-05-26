@@ -18,9 +18,9 @@ namespace Voystock
     public partial class App : Application
     {
 
+#if !LOCAL
         public static IVoyStockService Service { get;private set; }
 
-#if !LOCAL
         public WebChannelFactory<IVoyStockService> ChanelFactory { get; set; }
 #endif
 
