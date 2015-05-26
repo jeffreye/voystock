@@ -39,6 +39,7 @@
             <Guide Alignment="Left" Position="525" />
             <Guide Alignment="Top" Position="177" />
             <Guide Alignment="Top" Position="215" />
+            <Guide Alignment="Left" Position="427" />
           </Guides>
         </GuideModel>
       </GuideModels>
@@ -47,21 +48,17 @@
       <GuideModels>
         <GuideModel>
           <Guides>
-            <Guide Alignment="Left" Position="20" />
-            <Guide Alignment="Top" Position="90" />
-            <Guide Alignment="Left" Position="40" />
-            <Guide Alignment="Top" Position="110" />
             <Guide Alignment="Top" Position="580" />
-            <Guide Alignment="Top" Position="120" />
             <Guide Alignment="Top" Position="484" />
             <Guide Alignment="Left" Position="630" />
             <Guide Alignment="Left" Position="390" />
-            <Guide Alignment="Top" Position="24" />
-            <Guide Alignment="Left" Position="833" />
             <Guide Alignment="Top" Position="412" />
             <Guide Alignment="Left" Position="872" />
             <Guide Alignment="Left" Position="396" />
-            <Guide Alignment="Left" Position="214" />
+            <Guide Alignment="Left" Position="480" />
+            <Guide Alignment="Left" Position="852" />
+            <Guide Alignment="Left" Position="40" />
+            <Guide Alignment="Left" Position="833" />
           </Guides>
         </GuideModel>
       </GuideModels>
