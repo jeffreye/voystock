@@ -608,13 +608,13 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 胜率PropertyName = "胜率";
 
-		private float _winRate = 0.5f;
+		private int _winRate = 50;
 
 		/// <summary>
 		/// Sets and gets the 胜率 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public float 胜率
+		public int 胜率
 		{
 			get
 			{
@@ -730,6 +730,29 @@ namespace Voystock.ViewModel
 					{
 						Console.WriteLine(code);
 					}));
+			}
+		}
+
+		/// <summary>
+		/// The <see cref="评测进度" /> property's name.
+		/// </summary>
+		public const string 评测进度PropertyName = "评测进度";
+
+		private int _evaluationProgress = 0;
+
+		/// <summary>
+		/// Sets and gets the 评测进度 property.
+		/// Changes to that property's value raise the PropertyChanged event. 
+		/// </summary>
+		public int 评测进度
+		{
+			get
+			{
+				return _evaluationProgress;
+			}
+			set
+			{
+				Set(评测进度PropertyName, ref _evaluationProgress, value);
 			}
 		}
 

@@ -27,30 +27,19 @@ namespace Voystock
 		}
 
 		[Description("Test text displayed in the textbox"), Category("Data")]
-		public int Text
-		{
-			get
-			{
-				int value;
-				if (int.TryParse(TextBox.Text, out value))
-				{
-					return value;
-				}
-				else
-				{
-					value = MinValue;
-					TextBox.Text = value.ToString();
-					return value;
-				}
-			}
-			set
-			{
-				TextBox.Text = value.ToString();
-				ValidateValue();
-			}
-		}
+        public int Text
+        {
+            get { return (int)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
 
-		[DefaultValue(100), Category("Data")]
+        // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Text", typeof(int), typeof(NumbericBox), new PropertyMetadata(0));
+
+
+
+        [DefaultValue(100), Category("Data")]
 		public int MaxValue
 		{
 			get { return (int)GetValue(MaxValueProperty); }
@@ -74,8 +63,16 @@ namespace Voystock
 		public static readonly DependencyProperty MinValueProperty =
 			DependencyProperty.Register("MinValue", typeof(int), typeof(NumbericBox), new PropertyMetadata(0));
 
+        protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+        {
+            if (e.Property.Name == "Text")
+            {
+                TextBox.Text = Math.Max(Math.Min(this.Text, MaxValue), MinValue).ToString();
+            }
+            base.OnPropertyChanged(e);
+        }
 
-		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
 			if (!char.IsDigit(e.Text, e.Text.Length - 1))
 			{
@@ -99,6 +96,7 @@ namespace Voystock
 			if (int.TryParse(TextBox.Text, out value))
 			{
 				TextBox.Text = Math.Max(Math.Min(value, MaxValue), MinValue).ToString();
+                this.Text = value;
 			}
 			else
 			{
