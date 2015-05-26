@@ -48,7 +48,7 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已选择方案PropertyName = "已选择方案";
 
-		private string _selectedScheme = "MA60";
+		private string _selectedScheme = "MACD(10,20,5)";
 
 		/// <summary>
 		/// Sets and gets the 已选择方案 property.

@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Collections.Generic;
+using System.Collections.ObjectModel
 
 namespace Voystock.ViewModel
 {
@@ -50,134 +51,48 @@ namespace Voystock.ViewModel
 			}
 		}
 
-
 		/// <summary>
-		/// The <see cref="所有指标" /> property's name.
-		/// </summary>
-		public const string 所有指标PropertyName = "所有指标";
+        /// The <see cref="所有方案列表" /> property's name.
+        /// </summary>
+        public const string 所有方案列表PropertyName = "所有方案列表";
 
-		private IEnumerable<string> _allIndicator = new[] { "MACD", "MA", "KD" };
+        private ObservableCollection<string> _schemes = new ObservableCollection<string>(){"MACD(10,20,5)"};
 
-		/// <summary>
-		/// Sets and gets the 所有指标 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public IEnumerable<string> 所有指标
-		{
-			get
-			{
-				return _allIndicator;
-			}
-			set
-			{
-				Set(所有指标PropertyName, ref _allIndicator, value);
-			}
-		}
+        /// <summary>
+        /// Sets and gets the 所有方案列表 property.
+        /// Changes to that property's value raise the PropertyChanged event. 
+        /// </summary>
+        public ObservableCollection<string> 所有方案列表
+        {
+            get
+            {
+                return _schemes;
+            }
 
-		/// <summary>
-		/// The <see cref="当前选中指标" /> property's name.
-		/// </summary>
-		public const string 当前选中指标PropertyName = "当前选中指标";
+            set
+            {
+                if (_schemes == value)
+                {
+                    return;
+                }
 
-		private string _selectedIndicator = "";
-
-		/// <summary>
-		/// Sets and gets the 当前选中指标 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public string 当前选中指标
-		{
-			get
-			{
-				return _selectedIndicator;
-			}
-			set
-			{
-				Set(当前选中指标PropertyName, ref _selectedIndicator, value);
-			}
-		}
-
-		/// <summary>
-		/// The <see cref="当前选中股票的买入点" /> property's name.
-		/// </summary>
-		public const string 当前选中股票的买入点PropertyName = "当前选中股票的买入点";
-
-		private string _buyCondition = "出现金叉";
-
-		/// <summary>
-		/// Sets and gets the 当前选中股票的买入点 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public string 当前选中股票的买入点
-		{
-			get
-			{
-				return _buyCondition;
-			}
-			set
-			{
-				Set(当前选中股票的买入点PropertyName, ref _buyCondition, value);
-			}
-		}
-
-		/// <summary>
-		/// The <see cref="当前选中股票的卖出点" /> property's name.
-		/// </summary>
-		public const string 当前选中股票的卖出点PropertyName = "当前选中股票的卖出点";
-
-		private string _sellCondition = "出现死叉";
-
-		/// <summary>
-		/// Sets and gets the 当前选中股票的卖出点 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public string 当前选中股票的卖出点
-		{
-			get
-			{
-				return _sellCondition;
-			}
-			set
-			{
-				Set(当前选中股票的卖出点PropertyName, ref _sellCondition, value);
-			}
-		}
-
-		/// <summary>
-		/// The <see cref="当前选中股票备注" /> property's name.
-		/// </summary>
-		public const string 当前选中股票备注PropertyName = "当前选中股票备注";
-
-		private string _currentTips = "别乱填参数啊亲";
-
-		/// <summary>
-		/// Sets and gets the 当前选中股票备注 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public string 当前选中股票备注
-		{
-			get
-			{
-				return _currentTips;
-			}
-			set
-			{
-				Set(当前选中股票备注PropertyName, ref _currentTips, value);
-			}
-		}
+                _schemes = value;
+                RaisePropertyChanged(所有方案列表PropertyName);
+            }
+        }
 
 		/// <summary>
 		/// The <see cref="已配置的指标" /> property's name.
 		/// </summary>
 		public const string 已配置的指标PropertyName = "已配置的指标";
 
-		private IEnumerable<string> _configedIndicators = new[] { "MACD(10,20,5)" };
+		private ObservableCollection<string> _configedIndicators = new ObservableCollection<string>() { "MACD(10,20,5)" };
 
 		/// <summary>
 		/// Sets and gets the 已配置的指标 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public IEnumerable<string> 已配置的指标
+		public ObservableCollection<string> 已配置的指标
 		{
 			get
 			{
@@ -194,7 +109,19 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已学习参数PropertyName = "已学习参数";
 
-		private IEnumerable<string> _learnedParameters = new[] { "MACD(10,20,5)" };
+		private IEnumerable<string> _learnedParameters = new[] 
+		{
+			"MACD(6, 7, 3)	 ",
+			"MACD(5, 9, 3)	 ",
+			"MACD(7, 10, 3)	 ",
+			"MACD(7, 8, 2)	 ",
+			"MACD(5, 10, 3)	 ",
+			"MACD(6, 10, 2)	 ",
+			"MACD(5, 8, 3)	 ",
+			"MACD(6, 9, 2)	 ",
+			"MACD(6, 8, 3)	 ",
+		};
+
 
 		/// <summary>
 		/// Sets and gets the 已学习参数 property.
@@ -273,7 +200,5 @@ namespace Voystock.ViewModel
 					}));
 			}
 		}
-
-		
 	}
 }

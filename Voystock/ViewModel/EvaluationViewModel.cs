@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Voystock.ViewModel
 {
@@ -567,13 +568,13 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已配置的指标PropertyName = "已配置的指标";
 
-		private IEnumerable<string> _configedIndicators = new[] { "MACD(10,20,5)", "MA(30)", "KDJ(9,3,3)" };
+		private ObservableCollection<string> _configedIndicators = new ObservableCollection<string>() { "MACD(10,20,5)", "MA(30)", "KDJ(9,3,3)" };
 
 		/// <summary>
 		/// Sets and gets the 已配置的指标 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public IEnumerable<string> 已配置的指标
+		public ObservableCollection<string> 已配置的指标
 		{
 			get
 			{
@@ -775,5 +776,42 @@ namespace Voystock.ViewModel
 			}
 		}
 
+
+
+		private RelayCommand _addIndicator;
+
+		/// <summary>
+		/// Gets the 添加指标.
+		/// </summary>
+		public RelayCommand 添加指标
+		{
+			get
+			{
+				return _addIndicator
+					?? (_addIndicator = new RelayCommand(
+					() =>
+					{
+						_configedIndicators.Add(string.Format("{0}({1},{2},{3})", 当前选中指标, 指标参数1, 指标参数2, 指标参数3));
+					}));
+			}
+		}
+
+		private RelayCommand<string> _deleteIndicaot;
+
+		/// <summary>
+		/// Gets the 删除指标.
+		/// </summary>
+		public RelayCommand<string> 删除指标
+		{
+			get
+			{
+				return _deleteIndicaot
+					?? (_deleteIndicaot = new RelayCommand<string>(
+					p =>
+					{
+						_configedIndicators.Remove(p);
+					}));
+			}
+		}
 	}
 }
