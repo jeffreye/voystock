@@ -30,9 +30,9 @@ namespace Voystock.Communication
             }
         }
 
-        static IVoyStockService Service { get; private set; }
+        static IVoyStockService Service;
 
-        static WebChannelFactory<IVoyStockService> ChanelFactory { get; set; }
+        static WebChannelFactory<IVoyStockService> ChanelFactory;
 
         public static KeyedCollection<string,Scheme> AllSchemes { get; private set; } = new SchemeCollection();
 
@@ -126,7 +126,7 @@ namespace Voystock.Communication
             return await Task.Run(() => Service.GetRecommendationResult(s.ID.ToString()));
         }
 
-        public static async Task<RecommendationResult> GetRecommendationResultOnDate((Scheme s, DateTime date)
+        public static async Task<RecommendationResult> GetRecommendationResultOnDate(Scheme s, DateTime date)
         {
             return await Task.Run(() => Service.GetRecommendationResultOnDate(s.ID.ToString(),date.ToShortDateString()));
         }
