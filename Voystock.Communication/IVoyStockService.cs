@@ -11,7 +11,13 @@ namespace Voystock.Communication
 	// 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码和配置文件中的接口名“IService1”。
 	[ServiceContract]
 	public interface IVoyStockService
-	{
+    {
+        [WebInvoke
+            (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "indicators", Method = "GET")]
+        [OperationContract]
+        List<IndicatorDescription> GetAllIndicators();
+
         [WebInvoke
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "scheme_all",Method ="GET")]
@@ -34,7 +40,7 @@ namespace Voystock.Communication
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "scheme/", Method = "POST")]
         [OperationContract]
-        void AddOrModifyScheme(Scheme s);
+        int AddOrModifyScheme(Scheme s);
 
         #region Evaluation
 

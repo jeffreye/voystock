@@ -44,11 +44,11 @@ namespace Voystock.Communication
 		[DataMember]
 		public bool StartLearning { get; set; }
 
-		[DataMember]
-		public bool LearningDone { get; set; }
+		//[DataMember]
+		//public bool LearningDone { get; set; }
 
 		[DataMember]
-		public List<Indicator> LearningIndicators { get; set; }
+		public LearningResult LearningIndicators { get; set; }
 
 		[DataMember]
 		public bool EnableRecommendation { get; set; }

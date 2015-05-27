@@ -11,14 +11,23 @@ namespace Voystock.Communication
 	[DataContract]
 	public class RecommendationResult
 	{
-        [DataMember]
-        public string Date { get; set; }
+        //[DataMember]
+        //public string Date { get; set; }
 
         [DataMember]
         public string StockCode { get; set; }
 
         [DataMember]
+        public string Name { get; set; }
+
+        [DataMember]
         public RecommendationOperation Operation { get; set; }
+
+        public bool IsSell { get { return Operation == RecommendationOperation.Sell; } }
+
+        public bool IsBuy { get { return Operation == RecommendationOperation.Buy; } }
+
+        public bool IsWait { get { return Operation == RecommendationOperation.Wait; } }
     }
 
     public enum RecommendationOperation

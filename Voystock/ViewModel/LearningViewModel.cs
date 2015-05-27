@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Collections.Generic;
-using System.Collections.ObjectModel
+using System.Collections.ObjectModel;
 
 namespace Voystock.ViewModel
 {
@@ -26,7 +26,7 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 方案名称PropertyName = "方案名称";
 
-		private string _schemeName = "MACD(1,2,3)";
+		private string _schemeName = "MACD(10,20,5)";
 
 		/// <summary>
 		/// Sets and gets the 方案名称 property.
@@ -109,25 +109,43 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已学习参数PropertyName = "已学习参数";
 
-		private IEnumerable<string> _learnedParameters = new[] 
+		private IEnumerable<Result> _learnedParameters = new[] 
 		{
-			"MACD(6, 7, 3)	 ",
-			"MACD(5, 9, 3)	 ",
-			"MACD(7, 10, 3)	 ",
-			"MACD(7, 8, 2)	 ",
-			"MACD(5, 10, 3)	 ",
-			"MACD(6, 10, 2)	 ",
-			"MACD(5, 8, 3)	 ",
-			"MACD(6, 9, 2)	 ",
-			"MACD(6, 8, 3)	 ",
+			new Result { Name = "MACD(9, 22, 9)	", WinRate =    0.3571f, 	Incoming = 0.2976f  },
+			new Result { Name = "MACD(9, 25, 8)	", WinRate =    0.3571f, 	Incoming = 0.2814f  },
+			new Result { Name = "MACD(10, 20, 9)", WinRate = 	0.3571f, 	Incoming = 0.3296f  },
+			new Result { Name = "MACD(10, 22, 8)", WinRate = 	0.3571f, 	Incoming = 0.2976f  },
+			new Result { Name = "MACD(11, 20, 8)", WinRate = 	0.3571f, 	Incoming = 0.3296f  },
+			new Result { Name = "MACD(11, 23, 7)", WinRate = 	0.3571f, 	Incoming = 0.2926f  },
+			new Result { Name = "MACD(12, 21, 7)", WinRate = 	0.3571f, 	Incoming = 0.2989f  },
+			new Result { Name = "MACD(13, 17, 8)", WinRate = 	0.3571f, 	Incoming = 0.3220f  },
+			new Result { Name = "MACD(13, 19, 7)", WinRate = 	0.3571f, 	Incoming = 0.3247f  },
+			new Result { Name = "MACD(14, 20, 6)", WinRate = 	0.3571f, 	Incoming = 0.2716f  },
+			new Result { Name = "MACD(18, 36, 9)", WinRate = 	0.3571f, 	Incoming = 0.1626f  },
+			new Result { Name = "MACD(10, 19, 9)", WinRate = 	0.3556f, 	Incoming = 0.3099f  },
+			new Result { Name = "MACD(13, 16, 8)", WinRate = 	0.3556f, 	Incoming = 0.3500f  },
+			new Result { Name = "MACD(14, 22, 5)", WinRate = 	0.3556f, 	Incoming = 0.2369f  },
+			new Result { Name = "MACD(15, 20, 5)", WinRate = 	0.3556f, 	Incoming = 0.2349f  },
+			new Result { Name = "MACD(10, 22, 6)", WinRate = 	0.3542f, 	Incoming = 0.2090f  },
+			new Result { Name = "MACD(12, 16, 7)", WinRate = 	0.3529f, 	Incoming = 0.2286f  },
+			new Result { Name = "MACD(13, 15, 7)", WinRate = 	0.3529f, 	Incoming = 0.2351f  },
+			new Result { Name = "MACD(10, 23, 8)", WinRate = 	0.3500f, 	Incoming = 0.2270f  },
 		};
+
+		public class Result
+		{
+			public string Name { get; set; }
+			public float WinRate { get; set; }
+
+			public float Incoming { get; set; }
+		}
 
 
 		/// <summary>
 		/// Sets and gets the 已学习参数 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public IEnumerable<string> 已学习参数
+		public IEnumerable<Result> 已学习参数
 		{
 			get
 			{

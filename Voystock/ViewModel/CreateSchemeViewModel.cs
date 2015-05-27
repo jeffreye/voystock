@@ -15,26 +15,19 @@ namespace Voystock.ViewModel
 	/// See http://www.galasoft.ch/mvvm
 	/// </para>
 	/// </summary>
-	public class EvaluationViewModel : ViewModelBase
+	public class CreateSchemeViewModel : ViewModelBase
 	{
 		/// <summary>
 		/// Initializes a new instance of the EvaluationPage class.
 		/// </summary>
-		public EvaluationViewModel()
+		public CreateSchemeViewModel()
 		{
-            UserSession.AllSchemesChanged += UserSession_AllSchemesChanged;
 		}
 
-        private void UserSession_AllSchemesChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        /// <summary>
-        /// The <see cref="方案名称" /> property's name.
-        /// </summary>
-        public const string 方案名称PropertyName = "方案名称";
+		/// <summary>
+		/// The <see cref="方案名称" /> property's name.
+		/// </summary>
+		public const string 方案名称PropertyName = "方案名称";
 
 		private string _schemeName = "MACD(10,20,5)";
 
@@ -342,46 +335,47 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 已选股票PropertyName = "已选股票";
 
-		private System.Collections.Generic.IEnumerable<string> _selectedStocks = new[]
-		{
-			"平安银行",
-			"工商银行",
-			"交通银行",
-			"重庆啤酒",
-			"中海集运",
-			"中联重科",
-			"盐湖股份",
-			"远兴能源",
-			"天津港  ",
-			"晋亿实业",
-			"中国铁建",
-			"中国交建",
-			"东软集团",
-			"科隆精化",
-			"山水文化",
-			"王府井  ",
-			"科达股份",
-			"陕西黑猫",
-			"会稽山  ",
-			"方直科技",
-			"中青宝  ",
-			"创业软件",
-		};
+		private ObservableCollection<Stock> _selectedStocks = new ObservableCollection<Stock>
+        {
+            new Stock { Code = "002036" , Name =    "汉麻产业"},
+            new Stock { Code = "600601" , Name =    "方正科技"},
+            new Stock { Code = "600275" , Name =    "武昌鱼  "},
+            new Stock { Code = "000883" , Name =    "湖北能源"},
+            new Stock { Code = "002575" , Name =    "群兴玩具"},
+            new Stock { Code = "601777" , Name =    "力帆股份"},
+            new Stock { Code = "002397" , Name =    "梦洁家纺"},
+            new Stock { Code = "600250" , Name =    "南纺股份"},
+            new Stock { Code = "002135" , Name =    "东南网架"},
+            new Stock { Code = "600505" , Name =    "西昌电力"},
+            new Stock { Code = "002526" , Name =    "山东矿机"},
+            new Stock { Code = "000066" , Name =    "长城电脑"},
+            new Stock { Code = "002255" , Name =    "海陆重工"},
+            new Stock { Code = "002282" , Name =    "博深工具"},
+            new Stock { Code = "000595" , Name =    "西北轴承"},
+            new Stock { Code = "600400" , Name =    "红豆股份"},
+            new Stock { Code = "603126" , Name =    "中材节能"},
+            new Stock { Code = "600190" , Name =    "锦州港  "},
+            new Stock { Code = "002389" , Name =    "南洋科技"},
+            new Stock { Code = "600328" , Name =    "兰太实业"},
+        };
+
+        private readonly ReadOnlyCollection<Stock> _allStock = new List<Stock>()
+        { new Stock { Code = "000000" , Name = "全部股票"} }.AsReadOnly();
 
 		/// <summary>
 		/// Sets and gets the 已选股票 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public System.Collections.Generic.IEnumerable<string> 已选股票
+		public IEnumerable<Stock> 已选股票
 		{
 			get
 			{
-				return _selectedStocks;
+				return _selectAllStock? (IEnumerable<Stock>)_allStock :  _selectedStocks;
 			}
-			set
-			{
-				Set(已选股票PropertyName, ref _selectedStocks, value);
-			}
+			//set
+			//{
+			//	Set(已选股票PropertyName, ref _selectedStocks, value);
+			//}
 		}
 
 		/// <summary>
@@ -404,10 +398,8 @@ namespace Voystock.ViewModel
 			set
 			{
 				Set(全部股票选中PropertyName, ref _selectAllStock, value);
-				if (value)
-				{
-					已选股票 = new[] { "全部股票" };
-				}
+
+                RaisePropertyChanged(已选股票PropertyName);
 			}
 		}
 
@@ -439,13 +431,19 @@ namespace Voystock.ViewModel
 		/// </summary>
 		public const string 当前选中指标PropertyName = "当前选中指标";
 
-		private string _selectedIndicator = "MACD";
+		private IndicatorDescription _selectedIndicator = new IndicatorDescription()
+        {
+            Name = "MACD",
+            BuyPoint = "出现金叉",
+            SellPoint = "出现死叉",
+            Remark = ""
+        };
 
 		/// <summary>
 		/// Sets and gets the 当前选中指标 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public string 当前选中指标
+		public IndicatorDescription 当前选中指标
 		{
 			get
 			{
@@ -454,7 +452,13 @@ namespace Voystock.ViewModel
 			set
 			{
 				Set(当前选中指标PropertyName, ref _selectedIndicator, value);
-			}
+                //RaisePropertyChanged(指标参数1PropertyName);
+                //RaisePropertyChanged(指标参数2PropertyName);
+                //RaisePropertyChanged(指标参数3PropertyName);
+                RaisePropertyChanged(nameof(当前选中股票的买入点));
+                RaisePropertyChanged(nameof(当前选中股票的卖出点));
+                RaisePropertyChanged(nameof(当前选中股票备注));
+            }
 		}
 
 		/// <summary>
@@ -527,34 +531,16 @@ namespace Voystock.ViewModel
 		}
 
 		/// <summary>
-		/// The <see cref="当前选中股票的买入点" /> property's name.
-		/// </summary>
-		public const string 当前选中股票的买入点PropertyName = "当前选中股票的买入点";
-
-		private string _buyCondition = "出现金叉";
-
-		/// <summary>
 		/// Sets and gets the 当前选中股票的买入点 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
 		public string 当前选中股票的买入点
 		{
 			get
-			{
-				return _buyCondition;
-			}
-			set
-			{
-				Set(当前选中股票的买入点PropertyName, ref _buyCondition, value);
-			}
+            {
+                return _selectedIndicator.BuyPoint;
+            }
 		}
-
-		/// <summary>
-		/// The <see cref="当前选中股票的卖出点" /> property's name.
-		/// </summary>
-		public const string 当前选中股票的卖出点PropertyName = "当前选中股票的卖出点";
-
-		private string _sellCondition = "出现死叉";
 
 		/// <summary>
 		/// Sets and gets the 当前选中股票的卖出点 property.
@@ -563,21 +549,10 @@ namespace Voystock.ViewModel
 		public string 当前选中股票的卖出点
 		{
 			get
-			{
-				return _sellCondition;
-			}
-			set
-			{
-				Set(当前选中股票的卖出点PropertyName, ref _sellCondition, value);
-			}
+            {
+                return _selectedIndicator.SellPoint;
+            }
 		}
-
-		/// <summary>
-		/// The <see cref="当前选中股票备注" /> property's name.
-		/// </summary>
-		public const string 当前选中股票备注PropertyName = "当前选中股票备注";
-
-		private string _currentTips = "别乱填参数啊亲";
 
 		/// <summary>
 		/// Sets and gets the 当前选中股票备注 property.
@@ -587,179 +562,32 @@ namespace Voystock.ViewModel
 		{
 			get
 			{
-				return _currentTips;
-			}
-			set
-			{
-				Set(当前选中股票备注PropertyName, ref _currentTips, value);
+				return _selectedIndicator.Remark;
 			}
 		}
 
-		/// <summary>
-		/// The <see cref="已配置的指标" /> property's name.
-		/// </summary>
-		public const string 已配置的指标PropertyName = "已配置的指标";
+        /// <summary>
+        /// The <see cref="已配置的指标" /> property's name.
+        /// </summary>
+        public const string 已配置的指标PropertyName = "已配置的指标";
 
-		private ObservableCollection<string> _configedIndicators = new ObservableCollection<string>()
-		{
-			//"MACD(10,20,5)",
-			//"MA(30)",
-			//"KDJ(9,3,3)"
-		};
+        private ObservableCollection<Indicator> _configedIndicators = new ObservableCollection<Indicator>();
 
-		/// <summary>
-		/// Sets and gets the 已配置的指标 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public ObservableCollection<string> 已配置的指标
-		{
-			get
-			{
-				return _configedIndicators;
-			}
-			set
-			{
-				Set(已配置的指标PropertyName, ref _configedIndicators, value);
-			}
-		}
-
-		/// <summary>
-		/// The <see cref="评测结束" /> property's name.
-		/// </summary>
-		public const string 评测结束PropertyName = "评测结束";
-
-		private bool _evaluationDone = false;
-
-		/// <summary>
-		/// Sets and gets the 评测结束 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public bool 评测结束
-		{
-			get
-			{
-				return _evaluationDone;
-			}
-			set
-			{
-				Set(评测结束PropertyName, ref _evaluationDone, value);
-			}
-		}
-
-		/// <summary>
-		/// The <see cref="胜率" /> property's name.
-		/// </summary>
-		public const string 胜率PropertyName = "胜率";
-
-		private int _winRate = 50;
-
-		/// <summary>
-		/// Sets and gets the 胜率 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public int 胜率
-		{
-			get
-			{
-				return _winRate;
-			}
-			set
-			{
-				Set(胜率PropertyName, ref _winRate, value);
-			}
-		}
-
-		/// <summary>
-		/// The <see cref="年化收益率" /> property's name.
-		/// </summary>
-		public const string 年化收益率PropertyName = "年化收益率";
-
-		private float _annualIncoming = 0.15f;
-
-		/// <summary>
-		/// Sets and gets the 年化收益率 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public float 年化收益率
-		{
-			get
-			{
-				return _annualIncoming;
-			}
-			set
-			{
-				Set(年化收益率PropertyName, ref _annualIncoming, value);
-			}
-		}
-
-		private RelayCommand _learnScheme;
-
-		/// <summary>
-		/// Gets the 学习此方案.
-		/// </summary>
-		public RelayCommand 学习此方案
-		{
-			get
-			{
-				return _learnScheme
-					?? (_learnScheme = new RelayCommand(
-					() =>
-					{
-
-					}));
-			}
-		}
-
-		private RelayCommand _reviewDetails;
-
-		/// <summary>
-		/// Gets the 查看交易详情.
-		/// </summary>
-		public RelayCommand 查看交易详情
-		{
-			get
-			{
-				return _reviewDetails
-					?? (_reviewDetails = new RelayCommand(
-					() =>
-					{
-						if (System.IO.File.Exists("交易详情.xlsx"))
-						{
-							System.Diagnostics.Process.Start("交易详情.xlsx");
-						}
-
-					}));
-			}
-		}
-
-		private RelayCommand _start;
-
-		/// <summary>
-		/// Gets the 开始评测.
-		/// </summary>
-		public RelayCommand 开始评测
-		{
-			get
-			{
-				return _start
-					?? (_start = new RelayCommand(
-					() =>
-					{
-						Task.Run(() =>
-						{
-							for (int i = 0; i <= 100; i++)
-							{
-								this.评测进度 = i;
-								System.Threading.Thread.Sleep(100);
-							}
-							评测结束 = true;
-
-							胜率 = 30;
-							年化收益率 = 0.17f;
-						});
-					}));
-			}
-		}
+        /// <summary>
+        /// Sets and gets the 已配置的指标 property.
+        /// Changes to that property's value raise the PropertyChanged event. 
+        /// </summary>
+        public ObservableCollection<Indicator> 已配置的指标
+        {
+            get
+            {
+                return _configedIndicators;
+            }
+            //private set
+            //{
+            //	Set(已配置的指标PropertyName, ref _configedIndicators, value);
+            //}
+        }
 
 		private RelayCommand<string> _addStock;
 
@@ -774,34 +602,11 @@ namespace Voystock.ViewModel
 					?? (_addStock = new RelayCommand<string>(
 					code =>
 					{
-						Console.WriteLine(code);
+                        // TODO: search stocks
+                        throw new NotImplementedException();
 					}));
 			}
 		}
-
-		/// <summary>
-		/// The <see cref="评测进度" /> property's name.
-		/// </summary>
-		public const string 评测进度PropertyName = "评测进度";
-
-		private int _evaluationProgress = 0;
-
-		/// <summary>
-		/// Sets and gets the 评测进度 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public int 评测进度
-		{
-			get
-			{
-				return _evaluationProgress;
-			}
-			set
-			{
-				Set(评测进度PropertyName, ref _evaluationProgress, value);
-			}
-		}
-
 
 
 		private RelayCommand _addIndicator;
@@ -817,27 +622,64 @@ namespace Voystock.ViewModel
 					?? (_addIndicator = new RelayCommand(
 					() =>
 					{
-						_configedIndicators.Add(string.Format("{0}({1},{2},{3})", 当前选中指标, 指标参数1, 指标参数2, 指标参数3));
+						_configedIndicators.Add(
+                            new Indicator()
+                            {
+                                Name = 当前选中指标.Name,
+                                Parameters = new List<float>() { 指标参数1, 指标参数2, 指标参数3 }
+                            });
 					}));
 			}
 		}
 
-		private RelayCommand<string> _deleteIndicaot;
+		private RelayCommand<Indicator> _deleteIndicaot;
 
 		/// <summary>
 		/// Gets the 删除指标.
 		/// </summary>
-		public RelayCommand<string> 删除指标
+		public RelayCommand<Indicator> 删除指标
 		{
 			get
 			{
 				return _deleteIndicaot
-					?? (_deleteIndicaot = new RelayCommand<string>(
+					?? (_deleteIndicaot = new RelayCommand<Indicator>(
 					p =>
 					{
 						_configedIndicators.Remove(p);
 					}));
 			}
 		}
+
+        public Scheme CreatedScheme { get; set; }
+
+        private RelayCommand _createScheme;
+
+        /// <summary>
+        /// Gets the 添加方案.
+        /// </summary>
+        public RelayCommand 添加方案
+        {
+            get
+            {
+                return _createScheme
+                    ?? (_createScheme = new RelayCommand(Execute添加方案));
+            }
+        }
+
+        protected void Execute添加方案()
+        {
+            CreatedScheme = new Scheme()
+            {
+                Name = _schemeName,
+                FirstInvestmentPercent = _firstInvestmentPercent,
+                AdditionalInvestmentCondition = _additionalInvestmentCondition,
+                HoldingCycles = _holdingCycles,
+                LossLimit = _lossLimit,
+                ProfitLimit = _profitLimit,
+                EvaluationStocks = _selectedStocks.ToList(),
+                EvaluationIndicators = _configedIndicators.ToList(),
+            };
+            UserSession.AddOrModifyScheme(CreatedScheme);
+        }
 	}
 }

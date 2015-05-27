@@ -287,7 +287,7 @@
                     <ImageBrush ImageSource="UIElements/指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
-                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="387" Margin="37,108.5,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" Foreground="#DD000000" BorderThickness="0" FontSize="16" d:LayoutOverrides="HorizontalAlignment">
+                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="387" Margin="135,94,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" Foreground="#DD000000" BorderThickness="0" FontSize="16" ItemsSource="{Binding 所有方案列表}" SelectedValue="{Binding 方案名称, Mode=TwoWay}">
                         <ComboBox.Resources>
                             <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="UIElements/dropdow_nrml.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
@@ -637,13 +637,9 @@
                                 </Grid>
                             </DataTemplate>
                         </ComboBox.Resources>
-                        <System:String>asdf</System:String>
-                        <System:String>sdg/hjh</System:String>
-                        <System:String>cbf</System:String>
-                        <System:String>dgdg</System:String>
                     </ComboBox>
-                    <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="121,220.5,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="215"/>
-                    <Button x:Name="GO" Content="GO" Margin="205.332,278.996,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" d:LayoutOverrides="HorizontalAlignment">
+                    <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" Height="1" Margin="219,206,432,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
+                    <Button x:Name="GO" Content="GO" Margin="303.332,264.496,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" d:LayoutOverrides="HorizontalAlignment">
                         <Button.Resources>
                             <ImageBrush x:Key="Button.Static.Background" ImageSource="UIElements/btn_评测按钮_normal.png" />
                             <SolidColorBrush x:Key="Button.Static.Border" Color="#00707070"/>
@@ -696,8 +692,6 @@
                             <ImageBrush ImageSource="UIElements/btn_评测按钮_normal.png"/>
                         </Button.Background>
                     </Button>
-                    <ListBox x:Name="方案管理内容" HorizontalAlignment="Right" Margin="0,72,27,37" Width="362" Background="White" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#DD000000"/>
-                    <TextBlock x:Name="方案管理" HorizontalAlignment="Right" Height="22" Margin="0,37,315,0" TextWrapping="Wrap" Text="方案管理" VerticalAlignment="Top" Width="74" FontSize="18" Foreground="#DD000000"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="结果" Header="结果" Margin="42.335,-1.75,-42.335,0" Height="60" VerticalAlignment="Top" Style="{DynamicResource TabItemStyle1}" BorderBrush="{x:Null}" Foreground="#DD000000" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}" HorizontalAlignment="Left" Width="166">
@@ -909,22 +903,39 @@
                 </TabItem.Background>
                 <Grid>
                     <TextBlock x:Name="方案名" Height="20.333" Margin="27,27,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50" d:LayoutOverrides="HorizontalAlignment"/>
-                    <Label x:Name="方案名内容" Content="数据连接" HorizontalAlignment="Left" Height="25" Margin="176,27.333,0,0" VerticalAlignment="Top" Width="132" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#89000000" BorderBrush="#1E000000" d:LayoutOverrides="HorizontalAlignment"/>
-                    <TextBlock x:Name="方案指标" Height="20.333" Margin="375.667,27,0,0" TextWrapping="Wrap" Text="方案指标" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="68.001"/>
-                    <Label x:Name="方案指标内容" Content="数据连接" HorizontalAlignment="Left" Height="25" Margin="522,27.331,0,0" VerticalAlignment="Top" Width="317" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#89000000" BorderBrush="#1E000000"/>
-                    <TextBlock x:Name="个股模式" Height="20.333" Margin="27,84,0,0" TextWrapping="Wrap" Text="个股模式" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="67.333" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Label x:Name="方案名内容" Content="{Binding 方案名称}" HorizontalAlignment="Left" Height="25" Margin="176,27.333,0,0" VerticalAlignment="Top" Width="132" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#89000000" BorderBrush="#1E000000" d:LayoutOverrides="HorizontalAlignment"/>
                     <Path x:Name="分割线" Data="M27,129 L839.03311,129" Fill="#1E000000" Height="1" Margin="27,122,27,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
-                    <ListView x:Name="结果内容" Margin="27,150.5,27,52">
+                    <ListView x:Name="结果内容" Margin="27,150.5,27,52" ItemsSource="{Binding 已学习参数}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn/>
+                                <GridViewColumn Header="参数" Width="400">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="胜率">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding WinRate}" ContentStringFormat="{}{0:P}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="年化收益">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Incoming}" ContentStringFormat="{}{0:P}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="上一步1" Content="{Binding PrevTab, ElementName=userControl, Mode=OneWay}" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment" Command="{Binding 上一步, ElementName=userControl, Mode=OneWay}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#89000000" Style="{DynamicResource ButtonStyle1}" FontStretch="Expanded" FontSize="16">
+        <Button x:Name="上一步1" Content="{Binding PrevTab, ElementName=userControl, Mode=OneWay}" HorizontalAlignment="Left" Margin="0,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" d:LayoutOverrides="HorizontalAlignment" Command="{Binding 上一步, ElementName=userControl, Mode=OneWay}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource ButtonStyle1}" FontStretch="Expanded" FontSize="16">
             <Button.Resources>
                 <Style x:Key="FocusVisual">
                     <Setter Property="Control.Template">
@@ -983,7 +994,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="下一步1" Content="{Binding NextTab, ElementName=userControl, Mode=OneWay}" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" Command="{Binding 下一步, ElementName=userControl, Mode=OneWay}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#89000000" Style="{DynamicResource ButtonStyle1}" FontSize="16" FontStretch="Expanded">
+        <Button x:Name="下一步1" Content="{Binding NextTab, ElementName=userControl, Mode=OneWay}" HorizontalAlignment="Left" Margin="708,600,0,0" VerticalAlignment="Top" Width="164" Height="40.24" Command="{Binding 下一步, ElementName=userControl, Mode=OneWay}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource ButtonStyle1}" FontSize="16" FontStretch="Expanded">
             <Button.Resources>
                 <Style x:Key="FocusVisual">
                     <Setter Property="Control.Template">
