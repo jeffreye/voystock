@@ -15,7 +15,7 @@ namespace Voystock.Communication
         //public string Date { get; set; }
 
         [DataMember]
-        public string StockCode { get; set; }
+        public string Code { get; set; }
 
         [DataMember]
         public string Name { get; set; }

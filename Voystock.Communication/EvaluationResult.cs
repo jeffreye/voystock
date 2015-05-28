@@ -17,7 +17,7 @@ namespace Voystock.Communication
 		public bool Done { get { return Progress >= 1.0f; } }
 
 		[DataMember]
-		public float Money { get; set; }
+		public float AnnualizedReturn { get; set; }
 
 		[DataMember]
 		public float WinRate { get; set; }

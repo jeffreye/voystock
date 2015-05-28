@@ -36,9 +36,17 @@ namespace Voystock.Communication
 
         public static KeyedCollection<string,Scheme> AllSchemes { get; private set; } = new SchemeCollection();
 
+        public static ReadOnlyCollection<IndicatorDescription> Indicators
+        {
+            get
+            {
+                return indicators??new List<IndicatorDescription>().AsReadOnly();
+            }
+        }
+
         public static event EventHandler AllSchemesChanged;
 
-        public static ReadOnlyCollection<IndicatorDescription> indicators;
+        private static ReadOnlyCollection<IndicatorDescription> indicators;
 
         public static async Task Open()
         {
@@ -65,19 +73,21 @@ namespace Voystock.Communication
             Service = null;
         }
 
-        public static async void DeleteScheme(Scheme s)
+        public static async Task DeleteScheme(Scheme s)
         {
             await Task.Run(() => Service.DeleteScheme(s.ID.ToString()));
+            AllSchemes.Remove(s);
+            AllSchemesChanged(null, EventArgs.Empty);
         }
         
-        public static async void AddOrModifyScheme(Scheme s)
+        public static async Task AddOrModifyScheme(Scheme s)
         {
             await Task.Run(() => s.ID = Service.AddOrModifyScheme(s));
         }
 
         #region Evaluation
 
-        public static async void Evaluate(Scheme s)
+        public static async Task Evaluate(Scheme s)
         {
             await Task.Run(() => Service.Evaluate(s.ID.ToString()));
         }
@@ -97,7 +107,7 @@ namespace Voystock.Communication
 
         #region Learning
 
-        public static async void Learn(Scheme s)
+        public static async Task Learn(Scheme s)
         {
             await Task.Run(() => Service.Learn(s.ID.ToString()));
         }
@@ -116,17 +126,17 @@ namespace Voystock.Communication
 
         #region Recommendation
 
-        public static async void Recommend(Scheme s)
+        public static async Task Recommend(Scheme s)
         {
             await Task.Run(() => Service.Recommend(s.ID.ToString()));
         }
 
-        public static async Task<RecommendationResult> GetRecommendationResult(Scheme s)
+        public static async Task<List<RecommendationResult>> GetRecommendationResult(Scheme s)
         {
             return await Task.Run(() => Service.GetRecommendationResult(s.ID.ToString()));
         }
 
-        public static async Task<RecommendationResult> GetRecommendationResultOnDate(Scheme s, DateTime date)
+        public static async Task<List<RecommendationResult>> GetRecommendationResultOnDate(Scheme s, DateTime date)
         {
             return await Task.Run(() => Service.GetRecommendationResultOnDate(s.ID.ToString(),date.ToShortDateString()));
         }

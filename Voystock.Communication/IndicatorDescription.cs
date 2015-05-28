@@ -23,7 +23,7 @@ namespace Voystock.Communication
         [DataMember]
         public string SellPoint { get; set; }
 
-        [DataMember]
+        [DataMember(IsRequired = false)]
         public string Remark { get; set; }
 
         public override string ToString()

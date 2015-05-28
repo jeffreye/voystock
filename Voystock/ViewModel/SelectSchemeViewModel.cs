@@ -32,49 +32,15 @@ namespace Voystock.ViewModel
                 _schemes.Add(item.Name);
             }
 
-            if (!_schemes.Contains(_schemeName))
-            {
-                方案名称 = _schemes.FirstOrDefault() ?? string.Empty;
-            }
+            方案详情 = UserSession.AllSchemes.FirstOrDefault() ?? new Scheme();
         }
 
-        /// <summary>
-        /// The <see cref="方案详情" /> property's name.
-        /// </summary>
-        public const string 方案详情PropertyName = "方案详情";
-
-        private Scheme _schemeDetail = null;
+        #region 选择方案
 
         /// <summary>
-        /// Sets and gets the 方案详情 property.
-        /// Changes to that property's value raise the PropertyChanged event. 
+        /// The <see cref="选中的方案名称" /> property's name.
         /// </summary>
-        public Scheme 方案详情
-        {
-            get
-            {
-                return _schemeDetail;
-            }
-            set
-            {
-                Set(方案详情PropertyName, ref _schemeDetail, value);
-
-                方案名称 = value.Name;
-                _configedIndicators.Clear();
-                foreach (var item in value.EvaluationIndicators)
-                {
-                    _configedIndicators.Add(item);
-                }
-
-                已学习参数 = value.LearningIndicators;
-            }
-        }
-
-
-        /// <summary>
-        /// The <see cref="方案名称" /> property's name.
-        /// </summary>
-        public const string 方案名称PropertyName = "方案名称";
+        public const string 选中的方案名称PropertyName = "选中的方案名称";
 
 		private string _schemeName = "MACD(10,20,5)";
 
@@ -83,8 +49,8 @@ namespace Voystock.ViewModel
 		/// Sets and gets the 方案名称 property.
 		/// Changes to that property's value raise the PropertyChanged event. 
 		/// </summary>
-		public string 方案名称
-		{
+		public string 选中的方案名称
+        {
 			get
 			{
 				return _schemeName;
@@ -98,7 +64,7 @@ namespace Voystock.ViewModel
 				}
 
 				_schemeName = value;
-				RaisePropertyChanged(方案名称PropertyName);
+				RaisePropertyChanged(选中的方案名称PropertyName);
                 方案详情 = UserSession.AllSchemes[value];
             }
 		}
@@ -133,50 +99,55 @@ namespace Voystock.ViewModel
             //}
         }
 
-		/// <summary>
-		/// The <see cref="已配置的指标" /> property's name.
-		/// </summary>
-		public const string 已配置的指标PropertyName = "已配置的指标";
-
-		private ObservableCollection<Indicator> _configedIndicators = new ObservableCollection<Indicator>();
-
-		/// <summary>
-		/// Sets and gets the 已配置的指标 property.
-		/// Changes to that property's value raise the PropertyChanged event. 
-		/// </summary>
-		public ObservableCollection<Indicator> 已配置的指标
-		{
-			get
-			{
-				return _configedIndicators;
-			}
-			//private set
-			//{
-			//	Set(已配置的指标PropertyName, ref _configedIndicators, value);
-			//}
-        }
+        #endregion
 
         /// <summary>
-        /// The <see cref="已学习参数PropertyName" /> property's name.
+        /// The <see cref="方案详情" /> property's name.
         /// </summary>
-        public const string 已学习参数PropertyName = "已学习参数";
+        public const string 方案详情PropertyName = "方案详情";
 
-        private LearningResult _learnedParameters = new LearningResult();
+        protected Scheme SchemeDetail = new Scheme();
 
         /// <summary>
-        /// Sets and gets the 已学习参数 property.
+        /// Sets and gets the 方案详情 property.
         /// Changes to that property's value raise the PropertyChanged event. 
         /// </summary>
-        public LearningResult 已学习参数
-		{
-			get
-			{
-				return _learnedParameters;
-			}
-            private set
+        public virtual Scheme 方案详情
+        {
+            get
             {
-				Set(已学习参数PropertyName, ref _learnedParameters, value);
-			}
-		}
-	}
+                return SchemeDetail;
+            }
+            set
+            {
+                Set(方案详情PropertyName, ref SchemeDetail, value);
+
+                选中的方案名称 = value.Name;
+            }
+        }
+
+        #region 方案编辑
+        
+        private RelayCommand _delelteScheme;
+
+        /// <summary>
+        /// Gets the 删除方案.
+        /// </summary>
+        public RelayCommand 删除方案
+        {
+            get
+            {
+                return _delelteScheme
+                    ?? (_delelteScheme = new RelayCommand(Execute删除方案));
+            }
+        }
+
+        protected async void Execute删除方案()
+        {
+            await UserSession.DeleteScheme(SchemeDetail);
+        }
+
+
+        #endregion
+    }
 }

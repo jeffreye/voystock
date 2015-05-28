@@ -98,13 +98,13 @@ namespace Voystock.Communication
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "recommendation/{scheme_id}", Method = "GET")]
         [OperationContract]
-		RecommendationResult GetRecommendationResult(string scheme_id);
+        List<RecommendationResult> GetRecommendationResult(string scheme_id);
 
         [WebInvoke
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "recommendation/{scheme_id}/{date}", Method = "GET")]
         [OperationContract]
-		RecommendationResult GetRecommendationResultOnDate(string scheme_id,string date);
+        List<RecommendationResult> GetRecommendationResultOnDate(string scheme_id,string date);
 
         [WebInvoke
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,

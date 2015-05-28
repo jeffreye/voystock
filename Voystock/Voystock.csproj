@@ -112,7 +112,6 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RecommendationViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="ViewModel\已选股票.cs" />
     <Compile Include="荐股子页面Control.xaml.cs">
       <DependentUpon>荐股子页面Control.xaml</DependentUpon>
     </Compile>
