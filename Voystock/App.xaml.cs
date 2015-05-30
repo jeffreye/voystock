@@ -13,14 +13,27 @@ namespace Voystock
     /// </summary>
     public partial class App : Application
     {
-        private async void Application_Startup(object sender, StartupEventArgs e)
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
-            await UserSession.Open();
+            try
+            {
+                UserSession.Open().Wait();
+            }
+            catch
+            {
+                MessageBox.Show("服务器都连不上,你用个鬼", "大事不妙了");
+                Shutdown();
+            }
         }
 
         private async void Application_Exit(object sender, ExitEventArgs e)
         {
             await UserSession.Close();
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show(e.Exception.Message, "大事不妙了");
         }
     }
 }

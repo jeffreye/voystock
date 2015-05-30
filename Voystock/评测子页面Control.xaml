@@ -4,12 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Voystock"
-             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="userControl" x:Class="Voystock.评测子页面Control"
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Communication="clr-namespace:Voystock.Communication;assembly=Voystock.Communication" x:Name="userControl" x:Class="Voystock.评测子页面Control"
              mc:Ignorable="d" 
-             d:DesignHeight="674" d:DesignWidth="902" DataContext="{Binding Evaluation, Mode=OneWay, Source={StaticResource Locator}}">
+             d:DesignHeight="674" d:DesignWidth="902">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Mode="OneWay" Path="Evaluation" Source="{StaticResource Locator}"/>
+    </UserControl.DataContext>
     <Grid>
         <TabControl x:Name="评测子页面" HorizontalAlignment="Right" Height="580" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,94" Style="{DynamicResource TabControlStyle1}" SelectionChanged="评测子页面_SelectionChanged">
             <TabControl.Resources>
@@ -654,10 +657,9 @@
                     <Label x:Name="买入点内容" Content="{Binding 当前选中股票的买入点}" HorizontalAlignment="Left" Height="24" Margin="197,218.5,0,0" VerticalAlignment="Top" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5"/>
                     <Label x:Name="卖出点内容" Content="{Binding 当前选中股票的卖出点}" HorizontalAlignment="Left" Margin="197,276.836,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
                     <Label x:Name="其他内容1" Content="{Binding 当前选中股票备注}" HorizontalAlignment="Left" Margin="197,335.172,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
-                    <Label x:Name="其他内容2" Content="绑定数据元素" HorizontalAlignment="Left" Margin="197,394.667,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
                     <TextBlock x:Name="方案提示" HorizontalAlignment="Left" Height="44" Margin="477,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.666" FontSize="13" Padding="0,5,0,0"><Run Text="方案中有多个指标时，有效的方案买入信号为"/><LineBreak/><Run Text="三日内各指标均发出买入信号 "/></TextBlock>
                     <Path x:Name="方案提示下分割线" Data="M479.66667,107.66667 L849.02166,107.66667" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="477,78,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="372"/>
-                    <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,109.172,17,155.828" Width="372" ItemsSource="{Binding 已配置的指标}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD000000" BorderThickness="0" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,109.172,17,155.828" Width="372" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD000000" BorderThickness="0" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" ItemTemplate="{DynamicResource DataTemplate1}" ItemsSource="{Binding 已配置的指标}">
                         <ListBox.Resources>
                             <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#1F26A0DA"/>
                             <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da"/>
@@ -713,10 +715,9 @@
                                 </Setter>
                             </Style>
                             <DataTemplate x:Key="DataTemplate1">
-                                <Grid x:Name="grid" MinWidth="{Binding Width, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}}" Margin="0">
-                                    <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0"/>
-                                    <TextBlock x:Name="textBlock" Margin="0,0,-0.001,0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}"/>
-                                    <Button x:Name="deleteButton" HorizontalAlignment="Right" Content="" Visibility="{Binding IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=grid, Mode=OneWay}" Margin="-200,0,0,0" BorderBrush="{x:Null}" Width="11" Height="14" VerticalAlignment="Center" >
+                                <Grid x:Name="grid" MinWidth="{Binding Width, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}" Margin="2" >
+                                    <TextBlock x:Name="textBlock" Margin="0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}"/>
+                                    <Button x:Name="deleteButton" HorizontalAlignment="Right" VerticalAlignment="Stretch" Command="{Binding DataContext.删除指标, ElementName=userControl}" CommandParameter="{Binding Mode=OneWay}" BorderThickness="0" Margin="0,6,20,5" Width="11" >
                                         <Button.Background>
                                             <ImageBrush ImageSource="UIElements/删除.png" Stretch="None"/>
                                         </Button.Background>
@@ -1617,8 +1618,7 @@
                             </Style>
                         </ProgressBar.Resources>
                     </ProgressBar>
-                    <ListBox x:Name="listBox1" Margin="37,103,36,143" ItemsSource="{Binding 已选股票}" Background="{x:Null}" SelectionMode="Multiple">
-                    </ListBox>
+                    <ListBox x:Name="listBox1" Margin="37,103,36,143" ItemsSource="{Binding 已选股票}" Background="{x:Null}" SelectionMode="Multiple"/>
                     <ProgressBar x:Name="分割线进度条2" Height="1" Margin="37.167,0,36,112" VerticalAlignment="Bottom" BorderThickness="0" Background="#1E000000" Foreground="#FF1FCBCC" BorderBrush="{x:Null}" Style="{DynamicResource ProgressBarStyle1}" Value="{Binding 评测进度}">
                         <ProgressBar.Resources>
                             <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF1FCBCC"/>

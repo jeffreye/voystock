@@ -36,17 +36,9 @@ namespace Voystock.Communication
 
         public static KeyedCollection<string,Scheme> AllSchemes { get; private set; } = new SchemeCollection();
 
-        public static ReadOnlyCollection<IndicatorDescription> Indicators
-        {
-            get
-            {
-                return indicators??new List<IndicatorDescription>().AsReadOnly();
-            }
-        }
+        public static ObservableCollection<IndicatorDescription> Indicators { get; set; }  = new ObservableCollection<IndicatorDescription>();
 
         public static event EventHandler AllSchemesChanged;
-
-        private static ReadOnlyCollection<IndicatorDescription> indicators;
 
         public static async Task Open()
         {
@@ -64,7 +56,10 @@ namespace Voystock.Communication
             }
             AllSchemesChanged(null, EventArgs.Empty);
 
-            indicators = (await indicatorsTask).AsReadOnly();
+            foreach (var item in await indicatorsTask)
+            {
+                Indicators.Add(item);
+            }
         }
 
         public static async Task Close()

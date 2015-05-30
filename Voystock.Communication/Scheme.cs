@@ -39,15 +39,12 @@ namespace Voystock.Communication
 		[DataMember]
 		public float ProfitLimit { get; set; }
 
+
 		[DataMember]
 		public ObservableCollection<Stock> EvaluationStocks { get; set; }
 
         [DataMember]
         public bool StartEvaluation { get; set; }
-        
-        public DateTime EvaluationStartDate{ get; set; }
-        
-        public DateTime EvaluationEndDate { get; set; }
 
         [DataMember]
         string EvaluationStartTime;
@@ -57,6 +54,7 @@ namespace Voystock.Communication
 
         [DataMember]
 		public ObservableCollection<Indicator> EvaluationIndicators { get; set; }
+
 
 		[DataMember]
 		public bool StartLearning { get; set; }
@@ -69,6 +67,11 @@ namespace Voystock.Communication
 
 		[DataMember]
 		public bool EnableRecommendation { get; set; }
+
+
+        public DateTime EvaluationStartDate { get; set; }
+
+        public DateTime EvaluationEndDate { get; set; }
 
         [OnSerializing]
         void OnSerialized(System.Runtime.Serialization.StreamingContext ctx)

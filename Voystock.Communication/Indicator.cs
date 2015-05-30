@@ -15,7 +15,7 @@ namespace Voystock.Communication
         public string Name { get; set; }
 
         [DataMember]
-        public List<float> Parameters { get; set; }
+        public List<float> Parameters { get; set; } = new List<float>();
 
         public override string ToString()
         {
