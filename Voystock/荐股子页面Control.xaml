@@ -79,7 +79,7 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
-            <TabItem x:Name="指标设置" Header="指标" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
+            <TabItem x:Name="指标设置" Header="方案" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -287,7 +287,7 @@
                     <ImageBrush ImageSource="UIElements/指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
-                    <ComboBox x:Name="方案下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="27,27,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" BorderBrush="White" Background="{x:Null}" Foreground="#DD000000" BorderThickness="0" FontSize="16">
+                    <ComboBox x:Name="方案下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="402" Margin="27,27,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" BorderBrush="White" Background="{x:Null}" Foreground="#DD000000" BorderThickness="0" FontSize="16" ItemsSource="{Binding 方案列表}" SelectedValue="{Binding 已选择方案, Mode=TwoWay}">
                         <ComboBox.Resources>
                             <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="UIElements/dropdow_nrml.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
@@ -639,10 +639,30 @@
                         </ComboBox.Resources>
                     </ComboBox>
                     <Path x:Name="分割线_Copy" Data="M27,129 L839.03311,129" Fill="#1E000000" Height="1" Margin="27,107,27,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
-                    <ListView x:Name="学习结果内容_学习结果中的一样_" Margin="27,125.996,0,0" Height="231.004" VerticalAlignment="Top" HorizontalAlignment="Left" Width="812">
+                    <ListView x:Name="学习结果内容_学习结果中的一样_" Margin="27,125.996,0,0" Height="231.004" VerticalAlignment="Top" HorizontalAlignment="Left" Width="812" ItemsSource="{Binding 已学习参数}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn/>
+                                <GridViewColumn Header="参数" Width="400">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="胜率">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding WinRate}" ContentStringFormat="{}{0:P}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="年化收益">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Incoming}" ContentStringFormat="{}{0:P}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -698,59 +718,6 @@
                         </Button.Resources>
                         <Button.Background>
                             <ImageBrush ImageSource="UIElements/btn_评测按钮_normal.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button x:Name="历史荐股结果" Content="历史荐股结果" HorizontalAlignment="Right" Height="40.5" Margin="0,28.5,157,0" VerticalAlignment="Top" Width="142.5" FontSize="16" Foreground="#DD000000" BorderThickness="0" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
-                        <Button.Resources>
-                            <ImageBrush x:Key="Button.Static.Background" ImageSource="UIElements/btn_按钮_normal.png" Stretch="None" />
-                            <SolidColorBrush x:Key="Button.Static.Border" Color="#00707070"/>
-                            <ImageBrush x:Key="Button.MouseOver.Background" ImageSource="UIElements/btn_按钮_hover.png" Stretch="None" />
-                            <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#003C7FB1"/>
-                            <ImageBrush x:Key="Button.Pressed.Background" ImageSource="UIElements/btn_按钮_pressed.png" Stretch="None" />
-                            <SolidColorBrush x:Key="Button.Pressed.Border" Color="#002C628B"/>
-                            <SolidColorBrush x:Key="Button.Disabled.Background" Color="#00F4F4F4"/>
-                            <SolidColorBrush x:Key="Button.Disabled.Border" Color="#00ADB2B5"/>
-                            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#00838383"/>
-                            <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
-                                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-                                <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-                                <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                                <Setter Property="BorderThickness" Value="1"/>
-                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                                <Setter Property="Padding" Value="1"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type Button}">
-                                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
-                                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsDefaulted" Value="true">
-                                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="true">
-                                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                                                </Trigger>
-                                                <Trigger Property="IsPressed" Value="true">
-                                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                                                </Trigger>
-                                                <Trigger Property="IsEnabled" Value="false">
-                                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Button.Resources>
-                        <Button.Background>
-                            <ImageBrush ImageSource="UIElements/btn_按钮_normal.png" Stretch="None"/>
                         </Button.Background>
                     </Button>
                 </Grid>
@@ -963,10 +930,23 @@
                     <ImageBrush ImageSource="UIElements/结果BG_normal.png"/>
                 </TabItem.Background>
                 <Grid>
-                    <ListView x:Name="推荐结果内容" Margin="27,27,30,30">
+                    <ListView x:Name="推荐结果内容" Margin="27,27,30,30" ItemsSource="{Binding 荐股结果}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn/>
+                                <GridViewColumn Header="代码" Width="400">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Code}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="名称">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>

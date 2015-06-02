@@ -49,6 +49,7 @@ namespace Voystock.ViewModel
 			SimpleIoc.Default.Register<LearningViewModel>();
 
 			SimpleIoc.Default.Register<RecommendationViewModel>();
+
         }
 
 		public MainViewModel Main

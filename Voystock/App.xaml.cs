@@ -4,10 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-#if !LOCAL
-//using System.ServiceModel.Web;
-//using Voystock.Communication;
-#endif
+using Voystock.Communication;
 
 namespace Voystock
 {
@@ -16,34 +13,27 @@ namespace Voystock
     /// </summary>
     public partial class App : Application
     {
-
-        //public static IVoyStockService Service { get;private set; }
-
-#if !LOCAL
-        //public WebChannelFactory<IVoyStockService> ChanelFactory { get; set; }
-#endif
-
-
-        //public static List<Scheme> AllSchemes { get; private set; }
-
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-#if !LOCAL
-            //ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://localhost:5555/"));
-            //ChanelFactory.Open();
-            //Service = ChanelFactory.CreateChannel();
-
-            //AllSchemes = Service.GetAllScheme();
-
-#endif
+            try
+            {
+                UserSession.Open().Wait();
+            }
+            catch
+            {
+                MessageBox.Show("服务器都连不上,你用个鬼", "大事不妙了");
+                Shutdown();
+            }
         }
 
-        private void Application_Exit(object sender, ExitEventArgs e)
+        private async void Application_Exit(object sender, ExitEventArgs e)
         {
-#if !LOCAL
-            //Service = null;
-            //ChanelFactory.Close();
-#endif
+            await UserSession.Close();
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show(e.Exception.Message, "大事不妙了");
         }
     }
 }

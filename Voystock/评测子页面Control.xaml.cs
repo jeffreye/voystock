@@ -107,5 +107,16 @@ namespace Voystock
             上一步.RaiseCanExecuteChanged();
             下一步.RaiseCanExecuteChanged();
         }
+
+        private void 参数设置3_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var vm=DataContext as ViewModel.EvaluationViewModel;
+            vm.添加指标.Execute(null);
+        }
+
+        private void 结果_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            下一步.RaiseCanExecuteChanged();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.Collections.ObjectModel;
 
 namespace Voystock.Communication
 {
@@ -17,13 +18,19 @@ namespace Voystock.Communication
 		[DataMember]
 		public string Name { get; set; }
 
-		[DataMember]
-		public float FirstInvestmentPercent { get; set; }
+        [DataMember]
+        public float FirstInvestmentPercent { get; set; }
 
-		[DataMember]
-		public float AdditionalInvestmentCondition { get; set; }
+        [DataMember]
+        public float AdditionalInvestmentCondition { get; set; }
 
-		[DataMember]
+        [DataMember]
+        public float FirstSellPercent { get; set; }
+
+        [DataMember]
+        public float AdditionalSellCondition { get; set; }
+
+        [DataMember]
 		public int HoldingCycles { get; set; }
 
 		[DataMember]
@@ -32,25 +39,53 @@ namespace Voystock.Communication
 		[DataMember]
 		public float ProfitLimit { get; set; }
 
-		[DataMember]
-		public List<Stock> EvaluationStocks { get; set; }
 
 		[DataMember]
-		public bool StartEvaluation { get; set; }
+		public ObservableCollection<Stock> EvaluationStocks { get; set; }
 
-		[DataMember]
-		public List<Indicator> EvaluationIndicators { get; set; }
+        [DataMember]
+        public bool StartEvaluation { get; set; }
+
+        [DataMember]
+        string EvaluationStartTime;
+
+        [DataMember]
+        string EvaluationEndTime;
+
+        [DataMember]
+		public ObservableCollection<Indicator> EvaluationIndicators { get; set; }
+
 
 		[DataMember]
 		public bool StartLearning { get; set; }
 
-		[DataMember]
-		public bool LearningDone { get; set; }
+		//[DataMember]
+		//public bool LearningDone { get; set; }
 
 		[DataMember]
-		public List<Indicator> LearningIndicators { get; set; }
+		public LearningResult LearningIndicators { get; set; }
 
 		[DataMember]
 		public bool EnableRecommendation { get; set; }
-	}
+
+
+        public DateTime EvaluationStartDate { get; set; }
+
+        public DateTime EvaluationEndDate { get; set; }
+
+        [OnSerializing]
+        void OnSerialized(System.Runtime.Serialization.StreamingContext ctx)
+        {
+            EvaluationStartTime = EvaluationStartDate.ToShortDateString();
+            EvaluationEndTime = EvaluationEndDate.ToShortDateString();
+        }
+
+        [OnDeserialized]
+        void OnDeserializing(System.Runtime.Serialization.StreamingContext ctx)
+        {
+            EvaluationStartDate = DateTime.Parse(EvaluationStartTime);
+            EvaluationEndDate = DateTime.Parse(EvaluationEndTime);
+        }
+
+    }
 }

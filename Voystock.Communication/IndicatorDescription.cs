@@ -9,17 +9,26 @@ using System.ServiceModel;
 namespace Voystock.Communication
 {
     [DataContract]
-    public class Indicator
+    public class IndicatorDescription
     {
         [DataMember]
         public string Name { get; set; }
 
         [DataMember]
-        public List<float> Parameters { get; set; } = new List<float>();
+        public int SupportParameterCount { get; set; }
+
+        [DataMember]
+        public string BuyPoint { get; set; }
+
+        [DataMember]
+        public string SellPoint { get; set; }
+
+        [DataMember(IsRequired = false)]
+        public string Remark { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0}({1})", Name, string.Join(",", Parameters));
+            return Name;
         }
     }
 }
