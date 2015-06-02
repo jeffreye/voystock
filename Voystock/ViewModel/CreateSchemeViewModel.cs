@@ -61,7 +61,7 @@ namespace Voystock.ViewModel
         /// </summary>
         public const string 起始时间PropertyName = "起始时间";
 
-        private DateTime _startTime = DateTime.Now;
+        private DateTime _startTime = new DateTime(2005,6,6);
 
         /// <summary>
         /// Sets and gets the 起始时间 property.
@@ -84,7 +84,7 @@ namespace Voystock.ViewModel
         /// </summary>
         public const string 结束时间PropertyName = "结束时间";
 
-        private DateTime _endTime = DateTime.Now;
+        private DateTime _endTime = new DateTime(2012, 6, 27);
 
         /// <summary>
         /// Sets and gets the 结束时间 property.

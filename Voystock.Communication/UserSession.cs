@@ -42,21 +42,22 @@ namespace Voystock.Communication
 
         public static async Task Open()
         {
-            ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://localhost:5555/"));
+            ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://qsz1328.tk:5555/"));
             await Task.Factory.FromAsync(ChanelFactory.BeginOpen, ChanelFactory.EndOpen,null);
             Service = ChanelFactory.CreateChannel();
-
-            var indicatorsTask = Task.Run(() => Service.GetAllIndicators());
-
+            
             AllSchemes.Clear();
-            var results = await Task.Run(() => Service.GetAllScheme());
+            var results = Service.GetAllScheme();
             foreach (var item in results)
             {
                 AllSchemes.Add(item);
             }
-            AllSchemesChanged(null, EventArgs.Empty);
+            if (AllSchemesChanged != null)
+            {
+                AllSchemesChanged(null, EventArgs.Empty);
+            }
 
-            foreach (var item in await indicatorsTask)
+            foreach (var item in Service.GetAllIndicators())
             {
                 Indicators.Add(item);
             }
@@ -72,7 +73,10 @@ namespace Voystock.Communication
         {
             await Task.Run(() => Service.DeleteScheme(s.ID.ToString()));
             AllSchemes.Remove(s);
-            AllSchemesChanged(null, EventArgs.Empty);
+            if (AllSchemesChanged != null)
+            {
+                AllSchemesChanged(null, EventArgs.Empty);
+            }
         }
         
         public static async Task AddOrModifyScheme(Scheme s)
