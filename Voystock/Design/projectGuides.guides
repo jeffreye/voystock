@@ -29,21 +29,6 @@
         </GuideModel>
       </GuideModels>
     </ProjectItemGuide>
-    <ProjectItemGuide TargetFile="学习子页面Control.xaml">
-      <GuideModels>
-        <GuideModel>
-          <Guides>
-            <Guide Alignment="Left" Position="842" />
-            <Guide Alignment="Top" Position="120" />
-            <Guide Alignment="Left" Position="30" />
-            <Guide Alignment="Left" Position="525" />
-            <Guide Alignment="Top" Position="177" />
-            <Guide Alignment="Top" Position="215" />
-            <Guide Alignment="Left" Position="427" />
-          </Guides>
-        </GuideModel>
-      </GuideModels>
-    </ProjectItemGuide>
     <ProjectItemGuide TargetFile="评测子页面Control.xaml">
       <GuideModels>
         <GuideModel>
@@ -59,6 +44,21 @@
             <Guide Alignment="Left" Position="852" />
             <Guide Alignment="Left" Position="40" />
             <Guide Alignment="Left" Position="833" />
+          </Guides>
+        </GuideModel>
+      </GuideModels>
+    </ProjectItemGuide>
+    <ProjectItemGuide TargetFile="学习子页面Control.xaml">
+      <GuideModels>
+        <GuideModel>
+          <Guides>
+            <Guide Alignment="Left" Position="842" />
+            <Guide Alignment="Top" Position="120" />
+            <Guide Alignment="Left" Position="30" />
+            <Guide Alignment="Left" Position="525" />
+            <Guide Alignment="Top" Position="177" />
+            <Guide Alignment="Top" Position="215" />
+            <Guide Alignment="Left" Position="427" />
           </Guides>
         </GuideModel>
       </GuideModels>
