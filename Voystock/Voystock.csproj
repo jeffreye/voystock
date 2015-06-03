@@ -62,6 +62,7 @@
     </Reference>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -82,6 +83,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Communication\EvaluationResult.cs" />
+    <Compile Include="Communication\Indicator.cs" />
+    <Compile Include="Communication\IndicatorDescription.cs" />
+    <Compile Include="Communication\IVoyStockService.cs" />
+    <Compile Include="Communication\LearningResult.cs" />
+    <Compile Include="Communication\RecommendationResult.cs" />
+    <Compile Include="Communication\Scheme.cs" />
+    <Compile Include="Communication\Stock.cs" />
+    <Compile Include="Communication\UserSession.cs" />
     <Compile Include="NumbericBox.xaml.cs">
       <DependentUpon>NumbericBox.xaml</DependentUpon>
     </Compile>
