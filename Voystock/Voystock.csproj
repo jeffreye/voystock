@@ -84,9 +84,6 @@
     </Reference>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -104,15 +101,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Communication\EvaluationResult.cs" />
-    <Compile Include="Communication\Indicator.cs" />
-    <Compile Include="Communication\IndicatorDescription.cs" />
-    <Compile Include="Communication\IVoyStockService.cs" />
-    <Compile Include="Communication\LearningResult.cs" />
-    <Compile Include="Communication\RecommendationResult.cs" />
-    <Compile Include="Communication\Scheme.cs" />
-    <Compile Include="Communication\Stock.cs" />
-    <Compile Include="Communication\UserSession.cs" />
     <Compile Include="NumbericBox.xaml.cs">
       <DependentUpon>NumbericBox.xaml</DependentUpon>
     </Compile>
@@ -296,6 +284,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Voystock.Communication\Voystock.Communication.csproj">
+      <Project>{be90e29c-da49-40a7-97d9-c9c5cb04e9d9}</Project>
+      <Name>Voystock.Communication</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
