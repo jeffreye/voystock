@@ -39,8 +39,14 @@ namespace Voystock.Communication
 		[DataMember]
 		public float ProfitLimit { get; set; }
 
+        [DataMember]
+        public SchemeType CombinationType { get; set; }
 
-		[DataMember]
+        [DataMember]
+        public int TolerantDays { get; set; }
+
+
+        [DataMember]
 		public ObservableCollection<Stock> EvaluationStocks { get; set; }
 
         [DataMember]
@@ -87,5 +93,12 @@ namespace Voystock.Communication
             EvaluationEndDate = DateTime.Parse(EvaluationEndTime);
         }
 
+    }
+
+    public enum SchemeType
+    {
+        Parallel = 1,
+        Series,
+        Seperated
     }
 }
