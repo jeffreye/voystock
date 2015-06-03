@@ -262,7 +262,24 @@
     <Resource Include="dropdow_nrml.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UIElements\结果BG_disable.png" />
+    <Resource Include="UIElements\下拉背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\方案_hover.png" />
+    <Resource Include="UIElements\方案_normal.png" />
+    <Resource Include="UIElements\方案_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\结果BG_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Voystock.Communication\Voystock.Communication.csproj">
+      <Project>{be90e29c-da49-40a7-97d9-c9c5cb04e9d9}</Project>
+      <Name>Voystock.Communication</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UIElements\条目bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
