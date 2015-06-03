@@ -43,7 +43,7 @@ namespace Voystock.Communication
         public SchemeType CombinationType { get; set; }
 
         [DataMember]
-        public int TolerantDays { get; set; }
+        public int TolerantDays { get; set; } = 5;
 
 
         [DataMember]

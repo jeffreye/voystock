@@ -42,7 +42,8 @@ namespace Voystock.Communication
 
         public static async Task Open()
         {
-            ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://qsz1328.tk:5555/"));
+            System.Net.ServicePointManager.Expect100Continue = false;
+            ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://localhost:5555/"));
             await Task.Factory.FromAsync(ChanelFactory.BeginOpen, ChanelFactory.EndOpen,null);
             Service = ChanelFactory.CreateChannel();
             
@@ -81,7 +82,14 @@ namespace Voystock.Communication
         
         public static async Task AddOrModifyScheme(Scheme s)
         {
-            await Task.Run(() => s.ID = Service.AddOrModifyScheme(s));
+            if (!AllSchemes.Contains(s) && AllSchemes.Any(sc=>sc.Name == s.Name))
+            {
+                throw new InvalidOperationException("Duplicated Name");
+            }
+            await Task.Run(() => {
+                var result = Service.AddOrModifyScheme(s);
+                s.ID = int.Parse(result.Trim('"'));
+            });
         }
 
         #region Evaluation

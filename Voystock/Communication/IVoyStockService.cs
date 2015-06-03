@@ -40,7 +40,7 @@ namespace Voystock.Communication
             (RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "scheme/", Method = "POST")]
         [OperationContract]
-        int AddOrModifyScheme(Scheme s);
+        string AddOrModifyScheme(Scheme s);
 
         #region Evaluation
 

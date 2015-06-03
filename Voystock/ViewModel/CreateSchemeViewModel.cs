@@ -29,7 +29,7 @@ namespace Voystock.ViewModel
         /// </summary>
         public const string 方案名称PropertyName = "方案名称";
 
-        private string _schemeName = "MACD(10,20,5)";
+        private string _schemeName = Guid.NewGuid().ToString();
 
         /// <summary>
         /// Sets and gets the 方案名称 property.
