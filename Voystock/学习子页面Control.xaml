@@ -638,8 +638,8 @@
                             </DataTemplate>
                         </ComboBox.Resources>
                     </ComboBox>
-                    <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" Height="1" Margin="219,206,432,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
-                    <Button x:Name="GO" Content="GO" Margin="303.332,264.496,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" d:LayoutOverrides="HorizontalAlignment">
+                    <ProgressBar HorizontalAlignment="Left" Margin="121,220.465,0,0" Width="215" BorderThickness="0" Height="1" Background="#1E000000" BorderBrush="{x:Null}" Foreground="#FF1FCBCC" VerticalAlignment="Top"/>
+                    <Button x:Name="GO" Content="GO" Margin="205.332,278.996,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" d:LayoutOverrides="HorizontalAlignment">
                         <Button.Resources>
                             <ImageBrush x:Key="Button.Static.Background" ImageSource="UIElements/btn_评测按钮_normal.png" />
                             <SolidColorBrush x:Key="Button.Static.Border" Color="#00707070"/>
