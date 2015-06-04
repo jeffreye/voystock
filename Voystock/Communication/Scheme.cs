@@ -82,8 +82,8 @@ namespace Voystock.Communication
         [OnSerializing]
         void OnSerialized(System.Runtime.Serialization.StreamingContext ctx)
         {
-            EvaluationStartTime = EvaluationStartDate.ToShortDateString();
-            EvaluationEndTime = EvaluationEndDate.ToShortDateString();
+            EvaluationStartTime = EvaluationStartDate.ToString("yyyy-MM-dd");
+            EvaluationEndTime = EvaluationEndDate.ToString("yyyy-MM-dd");
         }
 
         [OnDeserialized]
