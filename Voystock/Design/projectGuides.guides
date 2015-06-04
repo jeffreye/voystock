@@ -18,24 +18,6 @@
         </GuideModel>
       </GuideModels>
     </ProjectItemGuide>
-    <ProjectItemGuide TargetFile="评测子页面Control.xaml">
-      <GuideModels>
-        <GuideModel>
-          <Guides>
-            <Guide Alignment="Top" Position="580" />
-            <Guide Alignment="Top" Position="510" />
-            <Guide Alignment="Left" Position="630" />
-            <Guide Alignment="Top" Position="398" />
-            <Guide Alignment="Left" Position="872" />
-            <Guide Alignment="Left" Position="480" />
-            <Guide Alignment="Left" Position="852" />
-            <Guide Alignment="Left" Position="40" />
-            <Guide Alignment="Left" Position="833" />
-            <Guide Alignment="Top" Position="120" />
-          </Guides>
-        </GuideModel>
-      </GuideModels>
-    </ProjectItemGuide>
     <ProjectItemGuide TargetFile="荐股子页面Control.xaml">
       <GuideModels>
         <GuideModel>
@@ -58,6 +40,24 @@
             <Guide Alignment="Left" Position="525" />
             <Guide Alignment="Left" Position="427" />
             <Guide Alignment="Top" Position="640" />
+          </Guides>
+        </GuideModel>
+      </GuideModels>
+    </ProjectItemGuide>
+    <ProjectItemGuide TargetFile="评测子页面Control.xaml">
+      <GuideModels>
+        <GuideModel>
+          <Guides>
+            <Guide Alignment="Top" Position="580" />
+            <Guide Alignment="Top" Position="510" />
+            <Guide Alignment="Left" Position="630" />
+            <Guide Alignment="Top" Position="398" />
+            <Guide Alignment="Left" Position="872" />
+            <Guide Alignment="Left" Position="480" />
+            <Guide Alignment="Left" Position="852" />
+            <Guide Alignment="Left" Position="40" />
+            <Guide Alignment="Left" Position="833" />
+            <Guide Alignment="Top" Position="120" />
           </Guides>
         </GuideModel>
       </GuideModels>

@@ -43,7 +43,7 @@ namespace Voystock.Communication
         public static async Task Open()
         {
             System.Net.ServicePointManager.Expect100Continue = false;
-            ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://localhost:5555/"));
+            ChanelFactory = new WebChannelFactory<IVoyStockService>(new Uri("http://jeffreye.ml:5555/"));
             await Task.Factory.FromAsync(ChanelFactory.BeginOpen, ChanelFactory.EndOpen,null);
             Service = ChanelFactory.CreateChannel();
             
