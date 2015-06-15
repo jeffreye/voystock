@@ -293,7 +293,7 @@
                     <ImageBrush ImageSource="UIElements/指标BG_normal.png"/>
                 </TabItem.Background>
                 <Grid Background="#02FFFFFF">
-                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="382" Margin="37,29.333,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" ItemsSource="{Binding 所有指标}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" FontSize="16" Foreground="#DD000000" BorderThickness="0" Background="{x:Null}" SelectedValue="{Binding 当前选中指标, Mode=TwoWay}">
+                    <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="382" Margin="37,29.333,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" ItemsSource="{Binding 所有指标}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" FontSize="16" Foreground="#DD000000" BorderThickness="0" Background="{x:Null}" SelectedValue="{Binding 当前选中指标, Mode=TwoWay}" Padding="2,0,0,0">
                         <ComboBox.Resources>
                             <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="UIElements/下拉背景.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
@@ -639,7 +639,7 @@
                             <DataTemplate x:Key="DataTemplate1">
                                 <Grid>
                                     <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0"/>
-                                    <TextBlock x:Name="textBlock" Margin="0,0,-0.001,0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}"/>
+                                    <TextBlock x:Name="textBlock" Margin="0" TextWrapping="Wrap" Text="{Binding Mode=OneWay}" Height="44" VerticalAlignment="Stretch" FontSize="18" Foreground="#DD000000" Background="{x:Null}" Padding="30,10,0,0" Width="352"/>
                                 </Grid>
                             </DataTemplate>
                             <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
@@ -647,9 +647,9 @@
                             </ItemsPanelTemplate>
                         </ComboBox.Resources>
                     </ComboBox>
-                    <local:NumbericBox x:Name="参数设置1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80" Text="{Binding 指标参数1, Mode=OneWayToSource}"/>
-                    <local:NumbericBox x:Name="参数设置2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80" Text="{Binding 指标参数2, Mode=OneWayToSource}"/>
-                    <local:NumbericBox x:Name="参数设置3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,115.667,0,0" Height="21.333" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000" Width="80" LostFocus="参数设置3_LostFocus" Text="{Binding 指标参数3, Mode=OneWayToSource}"/>
+                    <local:NumbericBox x:Name="参数设置1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,115.667,0,0" Height="21.333" BorderThickness="0" BorderBrush="#1E000000" Foreground="#89000000" Width="80" Text="{Binding 指标参数1, Mode=OneWayToSource}"/>
+                    <local:NumbericBox x:Name="参数设置2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,115.667,0,0" Height="21.333" BorderThickness="0" BorderBrush="#1E000000" Foreground="#89000000" Width="80" Text="{Binding 指标参数2, Mode=OneWayToSource}"/>
+                    <local:NumbericBox x:Name="参数设置3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,115.667,0,0" Height="21.333" BorderThickness="0" BorderBrush="#1E000000" Foreground="#89000000" Width="80" LostFocus="参数设置3_LostFocus" Text="{Binding 指标参数3, Mode=OneWayToSource}"/>
                     <Path x:Name="指标设置下分割线" Data="M40,205 L419,205" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="37,177,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="383"/>
                     <TextBlock x:Name="买入点" HorizontalAlignment="Left" Height="20" Margin="37,218.5,0,0" TextWrapping="Wrap" Text="买入点" VerticalAlignment="Top" Width="40" FontSize="13" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="卖出点" HorizontalAlignment="Left" Margin="37,276.836,0,0" TextWrapping="Wrap" Text="卖出点" Width="40" FontSize="13" Foreground="#DD000000" Height="20" VerticalAlignment="Top"/>
@@ -659,7 +659,7 @@
                     <Label x:Name="其他内容1" Content="{Binding 当前选中股票备注}" HorizontalAlignment="Left" Margin="197,335.172,0,0" Width="200" FontSize="13" BorderBrush="#1E000000" Foreground="#DD000000" BorderThickness="0,0,0,1" Padding="0,0,5,5" Height="24" VerticalAlignment="Top"/>
                     <TextBlock x:Name="方案提示" HorizontalAlignment="Left" Height="44" Margin="477,22.002,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.666" FontSize="13" Padding="0,5,0,0"><Run Text="方案中有多个指标时，有效的方案买入信号为"/><LineBreak/><Run Text="三日内各指标均发出买入信号 "/></TextBlock>
                     <Path x:Name="方案提示下分割线" Data="M479.66667,107.66667 L849.02166,107.66667" Fill="#1E000000" HorizontalAlignment="Left" Height="1" Margin="477,82.002,0,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top" Width="372"/>
-                    <Button x:Name="学习此方案" Content="保存此方案" HorizontalAlignment="Left" Height="40.5" Margin="706.5,0,0,26" VerticalAlignment="Bottom" Width="142.5" Command="{Binding 学习此方案, Mode=OneWay}" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" Style="{DynamicResource ButtonStyle1}" BorderThickness="0" FontSize="16">
+                    <Button x:Name="学习此方案" Content="保存此方案" HorizontalAlignment="Left" Height="40.5" Margin="706.5,0,0,26" VerticalAlignment="Bottom" Width="142.5" Command="{Binding 添加方案, Mode=OneWay}" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" Style="{DynamicResource ButtonStyle1}" BorderThickness="0" FontSize="16">
                         <Button.Resources>
                             <ImageBrush x:Key="Button.Static.Background" ImageSource="UIElements/btn_按钮_normal.png" />
                             <SolidColorBrush x:Key="Button.Static.Border" Color="#00707070"/>
@@ -769,7 +769,7 @@
                             </Style>
                             <DataTemplate x:Key="DataTemplate1">
                                 <Grid x:Name="grid" MinWidth="{Binding Width, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}" Margin="2" >
-                                    <TextBlock x:Name="textBlock" Margin="0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}"/>
+                                    <TextBlock x:Name="textBlock" Margin="0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}" Foreground="#DD000000"/>
                                     <Button x:Name="deleteButton" HorizontalAlignment="Right" VerticalAlignment="Stretch" Command="{Binding DataContext.删除指标, ElementName=userControl}" CommandParameter="{Binding Mode=OneWay}" BorderThickness="0" Margin="0,6,20,5" Width="11" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" >
                                         <Button.Resources>
                                             <ImageBrush x:Key="Button.Static.Background" ImageSource="UIElements/删除.png" Stretch="None" />
@@ -1546,13 +1546,13 @@
                         </DatePicker.Resources>
                     </DatePicker>
                     <TextBlock x:Name="首次投入资金比例" HorizontalAlignment="Left" Height="20" Margin="37,121,0,0" TextWrapping="Wrap" Text="首次投入资金比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
-                    <local:NumbericBox x:Name="输入框2" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="Height" Margin="292,121,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" BorderThickness="0,0,0,1" Text="{Binding 首次投入资金比例, Mode=TwoWay}" Foreground="#89000000"/>
+                    <local:NumbericBox x:Name="输入框2" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="Height" Margin="292,121,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" BorderThickness="0" Text="{Binding 首次投入资金比例, Mode=TwoWay}" Foreground="#89000000"/>
                     <TextBlock x:Name="投入剩余资金的上涨条件" HorizontalAlignment="Left" Height="20" Margin="37,219,0,0" TextWrapping="Wrap" Text="投入剩余资金的上涨条件" VerticalAlignment="Top" Width="178" FontSize="16" d:LayoutOverrides="VerticalAlignment"/>
-                    <local:NumbericBox x:Name="输入框3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,219,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height" Text="{Binding 投入剩余资金上涨条件, Mode=TwoWay}" BorderThickness="0,0,0,1" BorderBrush="#1E000000" Foreground="#89000000"/>
+                    <local:NumbericBox x:Name="输入框3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,219,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height" Text="{Binding 投入剩余资金上涨条件, Mode=TwoWay}" BorderThickness="0" BorderBrush="#1E000000" Foreground="#89000000"/>
                     <CheckBox x:Name="止盈率" Content="止盈率" HorizontalAlignment="Left" Height="19" Margin="37,0,0,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment" IsChecked="{Binding 止盈率启用}"/>
-                    <local:NumbericBox x:Name="输入框4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" IsEnabled="{Binding 止盈率启用}" Text="{Binding 止盈率, Mode=TwoWay}" Foreground="#89000000" BorderThickness="0,0,0,1"/>
+                    <local:NumbericBox x:Name="输入框4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" IsEnabled="{Binding 止盈率启用}" Text="{Binding 止盈率, Mode=TwoWay}" Foreground="#89000000" BorderThickness="0"/>
                     <CheckBox x:Name="固定交易周期" Content="固定交易周期" HorizontalAlignment="Left" Height="19" Margin="37,0,0,57" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" IsChecked="{Binding 固定交易周期启用}"/>
-                    <local:NumbericBox x:Name="输入框5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,51" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height" IsEnabled="{Binding 固定交易周期启用}" Foreground="#89000000" Text="{Binding 固定交易周期, Mode=TwoWay}" BorderThickness="0,0,0,1"/>
+                    <local:NumbericBox x:Name="输入框5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="292,0,0,51" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="Height" IsEnabled="{Binding 固定交易周期启用}" Foreground="#89000000" Text="{Binding 固定交易周期, Mode=TwoWay}" BorderThickness="0"/>
                     <TextBlock x:Name="评测结束时间" HorizontalAlignment="Left" Height="20" Margin="477,25.671,0,0" TextWrapping="Wrap" Text="评测结束时间" VerticalAlignment="Top" Width="96" FontSize="16"/>
                     <DatePicker HorizontalAlignment="Left" Margin="733,25.655,0,0" VerticalAlignment="Top" Width="116" Style="{DynamicResource DatePickerStyle1}" CalendarStyle="{DynamicResource CalendarStyle1}" FontSize="16" SelectedDate="{Binding 结束时间}" Foreground="#DD333333" BorderBrush="{x:Null}" BorderThickness="0">
                         <DatePicker.Resources>
@@ -1748,11 +1748,11 @@
                         </DatePicker.Resources>
                     </DatePicker>
                     <TextBlock x:Name="首次卖出股票比例" HorizontalAlignment="Left" Height="20" Margin="477,121,0,0" TextWrapping="Wrap" Text="首次卖出股票比例" VerticalAlignment="Top" Width="130" FontSize="16"/>
-                    <local:NumbericBox x:Name="输入框7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,121,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" Foreground="#89000000" Text="{Binding 首次卖出股票比例, Mode=TwoWay}" BorderThickness="0,0,0,1"/>
+                    <local:NumbericBox x:Name="输入框7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,121,0,0" Width="116" FontSize="16" BorderBrush="#1E000000" Foreground="#89000000" Text="{Binding 首次卖出股票比例, Mode=TwoWay}" BorderThickness="0"/>
                     <TextBlock x:Name="卖出剩余股票的下跌条件" HorizontalAlignment="Left" Height="20" Margin="477,219,0,0" TextWrapping="Wrap" Text="卖出剩余股票的下跌条件" VerticalAlignment="Top" Width="178" FontSize="16" d:LayoutOverrides="VerticalAlignment"/>
-                    <local:NumbericBox x:Name="输入框8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,219,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height" Foreground="#89000000" Text="{Binding 卖出剩余股票下跌条件, Mode=TwoWay}" BorderThickness="0,0,0,1"/>
+                    <local:NumbericBox x:Name="输入框8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,219,0,0" Width="116" FontSize="16" d:LayoutOverrides="Height" Foreground="#89000000" Text="{Binding 卖出剩余股票下跌条件, Mode=TwoWay}" BorderThickness="0"/>
                     <CheckBox x:Name="止损率" Content="止损率" HorizontalAlignment="Left" Height="19" Margin="477,0,0,145" VerticalAlignment="Bottom" Width="119" FontSize="16" Background="White" Foreground="#DD000000" d:LayoutOverrides="VerticalAlignment" IsChecked="{Binding 止损率启用}"/>
-                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="733,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" Foreground="#89000000" IsEnabled="{Binding 止损率启用}" Text="{Binding 止损率, Mode=TwoWay}" BorderThickness="0,0,0,1"/>
+                    <local:NumbericBox x:Name="输入框9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="733,0,0,139" Width="116" FontSize="16" BorderBrush="#1E000000" d:LayoutOverrides="VerticalAlignment, Height" Foreground="#89000000" IsEnabled="{Binding 止损率启用}" Text="{Binding 止损率, Mode=TwoWay}" BorderThickness="0"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="标的设置" Header="标的" Margin="86,-2,-88,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" Style="{DynamicResource TabItemStyle1}" Foreground="#DD000000" BorderBrush="{x:Null}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
@@ -2366,7 +2366,7 @@
                 </TabItem.Background>
                 <Grid>
                     <TextBlock x:Name="方案名" Height="20.333" Margin="387,27,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50"/>
-                    <TextBox x:Name="方案名内容" HorizontalAlignment="Left" Height="30" Margin="627,27,0,0" TextWrapping="Wrap" Text="{Binding 方案名称}" VerticalAlignment="Top" Width="212" FontSize="16" Background="{x:Null}" BorderBrush="#1E000000" Foreground="#89000000" Padding="-2,-2,0,0" BorderThickness="0,0,0,1" CaretBrush="#FF1FCBCC"/>
+                    <Label x:Name="方案名内容" Content="{Binding 方案名称}" HorizontalAlignment="Right" Height="30" Margin="0,27,27,0" VerticalAlignment="Top" Width="212" FontSize="16" Padding="0" BorderThickness="0,0,0,1" Foreground="#DD000000" BorderBrush="#1E000000"/>
                     <TextBlock x:Name="方案指标及参数" Height="20.333" Margin="387,126.002,0,0" TextWrapping="Wrap" Text="方案指标及参数" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="116.667"/>
                     <ListBox x:Name="已配置的指标" HorizontalAlignment="Right" Margin="0,124.002,36,77.998" Width="203" Background="{x:Null}" BorderBrush="{x:Null}" ItemsSource="{Binding 已配置的指标}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" Foreground="#DD000000" FontSize="16">
                         <ListBox.Resources>

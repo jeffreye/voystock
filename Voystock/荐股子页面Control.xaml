@@ -642,21 +642,26 @@
                     <ListView x:Name="学习结果内容_学习结果中的一样_" Margin="27,117.996,0,0" Height="335.504" VerticalAlignment="Top" HorizontalAlignment="Left" Width="812" ItemsSource="{Binding 已学习参数}" Background="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="参数" Width="400">
+                                <GridViewColumn Header="参数" Width="600">
+                                    <GridViewColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding }" Height="40" Background="#0026A0DA" />
+                                        </DataTemplate>
+                                    </GridViewColumn.HeaderTemplate>
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding Name}"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="胜率">
+                                <GridViewColumn Header="胜率" Width="105">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding WinRate}" ContentStringFormat="{}{0:P}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="年化收益">
+                                <GridViewColumn Header="年化收益" Width="105">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding Incoming}" ContentStringFormat="{}{0:P}"/>
@@ -665,7 +670,7 @@
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
-                    </ListView>
+                    </ListView> 
                     <ProgressBar Height="1" VerticalAlignment="Bottom" Margin="27,0,27,135" BorderThickness="0" Background="#1E000000" BorderBrush="{x:Null}" Foreground="#FF1FCBCC"/>
                     <Button x:Name="GO" Content="GO" Margin="407.332,483.996,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}">
                         <Button.Resources>

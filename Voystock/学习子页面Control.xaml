@@ -29,11 +29,11 @@
                                         <ColumnDefinition x:Name="ColumnDefinition1" Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition x:Name="RowDefinition0" Height="Auto" MinHeight="90"/>
+                                        <RowDefinition x:Name="RowDefinition0" Height="Auto" MinHeight="12.667"/>
                                         <RowDefinition x:Name="RowDefinition1"/>
                                     </Grid.RowDefinitions>
                                     <TabPanel x:Name="headerPanel" Background="Transparent" Grid.Column="0" IsItemsHost="true" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-                                    <Border x:Name="contentPanel" BorderThickness="{TemplateBinding BorderThickness}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                    <Border x:Name="contentPanel" BorderThickness="{TemplateBinding BorderThickness}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="0" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" Margin="2,2,0,0" Grid.RowSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
                                         <Border.Background>
                                             <ImageBrush ImageSource="UIElements/子页面BG.png"/>
                                         </Border.Background>
@@ -79,7 +79,7 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
-            <TabItem x:Name="指标设置" Header="方案" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="60" BorderBrush="{x:Null}" Foreground="#DD000000" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}">
+            <TabItem x:Name="指标设置" Header="方案" Margin="-2,-2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="10.667" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource TabItemStyle1}" Padding="90,2,6,2" FontSize="20" Template="{DynamicResource TabTemplate}" Background="{x:Null}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
                 <TabItem.Resources>
                     <Style x:Key="FocusVisual">
                         <Setter Property="Control.Template">
@@ -90,14 +90,14 @@
                             </Setter.Value>
                         </Setter>
                     </Style>
-                    <ImageBrush x:Key="TabItem.Static.Background" ImageSource="UIElements/指标BG_normal.png" />
+                    <SolidColorBrush x:Key="TabItem.Static.Background" Color="#00000000"/>
                     <SolidColorBrush x:Key="TabItem.Static.Border" Color="#00ACACAC"/>
-                    <ImageBrush x:Key="TabItem.MouseOver.Background" ImageSource="UIElements/指标BG_hover.png" />
+                    <SolidColorBrush x:Key="TabItem.MouseOver.Background" Color="#00000000"/>
                     <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#007EB4EA"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#00000000"/>
                     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#00D9D9D9"/>
                     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#00000000"/>
-                    <ImageBrush x:Key="TabItem.Selected.Background" ImageSource="UIElements/指标BG_pressed.png"/>
+                    <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#00000000"/>
                     <Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}">
                         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                         <Setter Property="Foreground" Value="Black"/>
@@ -283,17 +283,14 @@
                         </Setter>
                     </Style>
                 </TabItem.Resources>
-                <TabItem.Background>
-                    <ImageBrush ImageSource="UIElements/指标BG_normal.png"/>
-                </TabItem.Background>
-                <Grid Background="#02FFFFFF" Height="545.5" VerticalAlignment="Top" Margin="0,0,0,-1.5">
+                <Grid Background="#02FFFFFF" Height="640" VerticalAlignment="Top" Margin="0,0,0,-8">
                     <ComboBox x:Name="指标下拉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="387" Margin="27,27,0,0" Height="44" Style="{DynamicResource ComboBoxStyle1}" VerticalContentAlignment="Center" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemTemplate="{DynamicResource DataTemplate1}" Background="{x:Null}" Foreground="#DD000000" BorderThickness="0" FontSize="16" ItemsSource="{Binding 所有方案列表}" SelectedValue="{Binding 方案名称, Mode=TwoWay}" d:LayoutOverrides="HorizontalAlignment">
                         <ComboBox.Resources>
-                            <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="UIElements/dropdow_nrml.png" />
+                            <ImageBrush x:Key="ComboBox.Static.Background" ImageSource="UIElements/下拉背景.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#00ACACAC"/>
-                            <SolidColorBrush x:Key="ComboBox.Static.Editable.Background" Color="#FFFFFFFF"/>
+                            <ImageBrush x:Key="ComboBox.Static.Editable.Background" ImageSource="UIElements/下拉背景.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Editable.Border" Color="#00ABADB3"/>
-                            <ImageBrush x:Key="ComboBox.Static.Editable.Button.Background" ImageSource="UIElements/dropdow_nrml.png" />
+                            <ImageBrush x:Key="ComboBox.Static.Editable.Button.Background" ImageSource="UIElements/下拉背景.png" />
                             <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Border" Color="Transparent"/>
                             <SolidColorBrush x:Key="ComboBox.MouseOver.Glyph" Color="#FF000000"/>
                             <ImageBrush x:Key="ComboBox.MouseOver.Background" ImageSource="UIElements/dropdown-hvr.png" />
@@ -631,15 +628,15 @@
                                 </Setter>
                             </Style>
                             <DataTemplate x:Key="DataTemplate1">
-                                <Grid>
+                                <Grid Width="352" Height="44">
                                     <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0"/>
-                                    <TextBlock x:Name="textBlock" Margin="0,0,-0.001,0" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Text="{Binding Mode=OneWay}"/>
+                                    <TextBlock x:Name="textBlock" Margin="0,0,-0.001,0" TextWrapping="Wrap" Text="{Binding Mode=OneWay}" Width="352" Height="44" Padding="30,10,0,0" FontSize="18" Foreground="#DD000000"/>
                                 </Grid>
                             </DataTemplate>
                         </ComboBox.Resources>
                     </ComboBox>
                     <ProgressBar Margin="27,105.333,283,0" BorderThickness="0" Height="1" Background="#1E000000" BorderBrush="{x:Null}" Foreground="#FF1FCBCC" VerticalAlignment="Top"/>
-                    <Button x:Name="GO" Content="GO" Margin="522,27,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" d:LayoutOverrides="VerticalAlignment">
+                    <Button x:Name="GO" Content="GO" Margin="522,27,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" d:LayoutOverrides="VerticalAlignment" BorderThickness="0" Command="{Binding 开始学习, Mode=OneWay}">
                         <Button.Resources>
                             <ImageBrush x:Key="Button.Static.Background" ImageSource="UIElements/btn_评测按钮_normal.png" />
                             <SolidColorBrush x:Key="Button.Static.Border" Color="#00707070"/>
@@ -692,27 +689,27 @@
                             <ImageBrush ImageSource="UIElements/btn_评测按钮_normal.png"/>
                         </Button.Background>
                     </Button>
-                    <TextBlock x:Name="方案名" Height="20.333" Margin="28,139,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50" d:LayoutOverrides="HorizontalAlignment"/>
+                    <TextBlock x:Name="方案名" Height="20.333" Margin="28,139,0,0" TextWrapping="Wrap" Text="方案名" VerticalAlignment="Top" FontSize="16" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50" d:LayoutOverrides="HorizontalAlignment" Foreground="#DD000000"/>
                     <Label x:Name="方案名内容" Content="{Binding 方案名称}" HorizontalAlignment="Left" Height="25" Margin="177,139.333,0,0" VerticalAlignment="Top" Width="132" FontSize="16" Padding="0,0,5,5" BorderThickness="0,0,0,1" Foreground="#89000000" BorderBrush="#1E000000" d:LayoutOverrides="HorizontalAlignment"/>
                     <Path x:Name="分割线" Data="M27,129 L839.03311,129" Fill="#1E000000" Height="1" Margin="27,190.5,27,0" Stretch="Fill" Stroke="#1E000000" VerticalAlignment="Top"/>
-                    <ListView x:Name="结果内容" Margin="27,215.5,27,15.5" ItemsSource="{Binding 已学习参数}">
+                    <ListView x:Name="结果内容" Margin="27,215.5,27,-53.5" ItemsSource="{Binding 已学习参数}" Height="383.5" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#89000000">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="参数" Width="400">
+                                <GridViewColumn Header="参数" Width="600">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding Name}"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="胜率">
+                                <GridViewColumn Header="胜率" Width="105">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding WinRate}" ContentStringFormat="{}{0:P}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="年化收益">
+                                <GridViewColumn Header="年化收益" Width="105">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding Incoming}" ContentStringFormat="{}{0:P}"/>
@@ -725,6 +722,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Label x:Name="label" Content="0.0.0.0" HorizontalAlignment="Left" Height="31.5" Margin="147.666,-31.5,0,0" VerticalAlignment="Top" Width="134.5"/>
 
     </Grid>
 </UserControl>

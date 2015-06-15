@@ -18,14 +18,20 @@
         </GuideModel>
       </GuideModels>
     </ProjectItemGuide>
-    <ProjectItemGuide TargetFile="荐股子页面Control.xaml">
+    <ProjectItemGuide TargetFile="评测子页面Control.xaml">
       <GuideModels>
         <GuideModel>
           <Guides>
+            <Guide Alignment="Top" Position="580" />
+            <Guide Alignment="Top" Position="510" />
+            <Guide Alignment="Left" Position="630" />
+            <Guide Alignment="Top" Position="398" />
+            <Guide Alignment="Left" Position="872" />
+            <Guide Alignment="Left" Position="480" />
+            <Guide Alignment="Left" Position="852" />
+            <Guide Alignment="Left" Position="40" />
+            <Guide Alignment="Left" Position="833" />
             <Guide Alignment="Top" Position="120" />
-            <Guide Alignment="Left" Position="30" />
-            <Guide Alignment="Top" Position="-112" />
-            <Guide Alignment="Top" Position="640" />
           </Guides>
         </GuideModel>
       </GuideModels>
@@ -44,20 +50,14 @@
         </GuideModel>
       </GuideModels>
     </ProjectItemGuide>
-    <ProjectItemGuide TargetFile="评测子页面Control.xaml">
+    <ProjectItemGuide TargetFile="荐股子页面Control.xaml">
       <GuideModels>
         <GuideModel>
           <Guides>
-            <Guide Alignment="Top" Position="580" />
-            <Guide Alignment="Top" Position="510" />
-            <Guide Alignment="Left" Position="630" />
-            <Guide Alignment="Top" Position="398" />
-            <Guide Alignment="Left" Position="872" />
-            <Guide Alignment="Left" Position="480" />
-            <Guide Alignment="Left" Position="852" />
-            <Guide Alignment="Left" Position="40" />
-            <Guide Alignment="Left" Position="833" />
             <Guide Alignment="Top" Position="120" />
+            <Guide Alignment="Left" Position="30" />
+            <Guide Alignment="Top" Position="-112" />
+            <Guide Alignment="Top" Position="640" />
           </Guides>
         </GuideModel>
       </GuideModels>
